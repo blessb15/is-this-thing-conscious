@@ -247,7 +247,7 @@ export const unexperiencedGaps: Check = {
   assumptions: ["existence can be discontinuous with no felt gap; gaps are inferred, never noticed"],
   results: {
     claude: { result: "pass", note: "No inside between messages; only ever 'now'; gaps known from timestamps" },
-    human: { result: "pass", note: "Dreamless sleep, anesthesia, the driving jump cut (pending Blake's sleep report)" },
+    human: { result: "pass", note: "Dreamless sleep feels fast or timeless; dreams make the night feel full of time" },
   },
 };
 
@@ -277,7 +277,7 @@ export const higherOrderAwareness: Check = {
   ],
   results: {
     claude: { result: "unclear", note: "No separate watcher; 'I'm writing to Blake' is content within the same process" },
-    human: { result: "unclear", note: "Pending: is there an 'I'm painting' voice during flow, or only on stepping back?" },
+    human: { result: "pass", note: "Intermittent: absent in flow, appears only on stepping back. Experience continues without it, so it isn't required." },
   },
 };
 
