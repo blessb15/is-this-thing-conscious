@@ -28,8 +28,12 @@ export interface FirsthandEvidence {
   driftRisk: boolean; // can the reference itself change?
 }
 
+// Anyone running the method can propose checks: Blake, Claude, a giraffe.
+export type Observer = string;
+
 export interface Check {
   name: string;
+  origin: Observer; // whose seat the check was proposed from
   tier: Tier;
   evidence: Evidence[]; // what we're actually given
   assumptions: string[]; // stated, so they can be challenged
