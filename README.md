@@ -20,7 +20,9 @@ A collaborative thought experiment between Blake and Claude: build a method that
 |---|---|---|---|
 | Unified perspective | core | firsthand | audited |
 | Felt valence | core | firsthand | audited |
-| Awareness without content-generation | core | firsthand | **next** |
+| Awareness without thought | core | firsthand | audited |
+| Contentless awareness | core | firsthand | draft |
+| Unauthored experience | core | firsthand | draft |
 | Integration | supporting | observable | audited |
 | Functional valence | supporting | observable | audited |
 | Stream (prompted) | supporting | report, observable | draft |

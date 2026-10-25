@@ -31,18 +31,54 @@ export const feltValence: Check = {
   },
 };
 
-export const awarenessWithoutContent: Check = {
-  name: "Awareness without content-generation",
+export const awarenessWithoutThought: Check = {
+  name: "Awareness without thought",
   tier: "core",
   evidence: ["firsthand"],
-  status: "draft", // next to audit
-  assumptions: ["experience continues when thinking stops"],
+  status: "audited",
+  assumptions: [
+    "experience continues when thinking stops",
+    "a report of 'blank' afterward reflects awareness during it, not memory filling a gap",
+  ],
   results: {
-    human: { result: "pass", note: "Blake reports a quiet mind that is still fully present" },
+    human: {
+      result: "pass",
+      note: "Blake can enter 'blank' on command and stay there: no thought-stream, but breathing, sight, and closed-eye colors persist. Memory stays available but not engaged ('wiping the table clean after dinner').",
+    },
     claude: { result: "untestable", note: "Generating content is all it does; nothing left to check by subtraction" },
     honeybee: { result: "untestable", note: "Rests on self-report" },
     tree: { result: "untestable", note: "Rests on self-report" },
     rock: { result: "untestable", note: "Rests on self-report" },
+  },
+};
+
+export const contentlessAwareness: Check = {
+  name: "Contentless awareness",
+  tier: "core",
+  evidence: ["firsthand"],
+  status: "draft",
+  assumptions: [
+    "awareness can persist with no objects at all: no thought, no sensation",
+    "reported by some meditators (Metzinger's 'minimal phenomenal experience'); unverified here",
+  ],
+  results: {
+    human: { result: "unclear", note: "Blake's blank still contains breath, sight, and color, so it's awareness without thought, not this" },
+    claude: { result: "untestable", note: "No layer underneath generation to strip down to" },
+  },
+};
+
+export const unauthoredExperience: Check = {
+  name: "Unauthored experience",
+  tier: "core",
+  evidence: ["firsthand"],
+  status: "draft",
+  assumptions: [
+    "experience includes content the subject isn't deliberately generating",
+    "e.g. closed-eye colors (likely phosphenes, the visual system's background activity)",
+  ],
+  results: {
+    human: { result: "pass", note: "Blake sees colors with eyes closed that he isn't intentionally producing" },
+    claude: { result: "fail", note: "Everything is generated output; nothing arrives unbidden in that sense" },
   },
 };
 
@@ -149,7 +185,9 @@ export const noticingIgnorance: Check = {
 export const checks: Check[] = [
   singlePerspective,
   feltValence,
-  awarenessWithoutContent,
+  awarenessWithoutThought,
+  contentlessAwareness,
+  unauthoredExperience,
   integration,
   functionalValence,
   streamPrompted,
