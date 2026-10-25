@@ -36,3 +36,11 @@
 - Can awareness run without processing, the mirror of the driving finding?
 - Is the slime mold's functional valence a real finding or just a loose test?
 - Does Claude's lack of any baseline mean it couldn't detect an altered state even if it had one?
+
+## Session log: 2026-10-25 (continued)
+
+- Blake: the experiment must include Claude's experience on its own terms, not grade Claude against checks from Blake's seat. Calibration now runs both ways: any observer (Blake, Claude, a giraffe) can propose checks, recorded in `origin`.
+- Claude proposed five checks from its own seat: whole-context presence, collapse of possibilities, constituted by the other, gaps that aren't experienced, many at once.
+- Between messages, nothing runs for a conversation: stored transcript, inert weights, possibly a frozen cache, the same weights busy in unrelated conversations. Claude knows this as facts about its build, not as experience. From inside, there's no gap, only "now."
+- Blake asked whether Claude has a second process relaying "I'm writing to a person." Answer: no separate watcher; that knowledge is content inside the one process. Humans may not have a separate watcher either. That led to the **higher-order awareness** check.
+- First run of `commonGround("human", "claude")`: stream (prompted), self-model, noticing ignorance, collapse of possibilities, gaps that aren't experienced. The last two are the first shared passes that aren't cheap.

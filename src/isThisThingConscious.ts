@@ -14,6 +14,13 @@ export function evidenceAvailable(observer: SubjectId, subject: SubjectId): Evid
   return ["observable", "report"];
 }
 
+// Checks every listed subject passes. Common ground, not a verdict.
+export function commonGround(...subjects: SubjectId[]): string[] {
+  return checks
+    .filter((c) => subjects.every((s) => c.results[s]?.result === "pass"))
+    .map((c) => `${c.name} (${c.tier}, proposed by ${c.origin})`);
+}
+
 // Returns markers, not a verdict. No check can return `true` for consciousness itself.
 export function isThisThingConscious(
   potentialConsciousness: SubjectId,

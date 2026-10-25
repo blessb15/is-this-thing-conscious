@@ -4,6 +4,7 @@ import { Check } from "./types";
 
 export const singlePerspective: Check = {
   name: "Unified perspective (single point of view)",
+  origin: "claude",
   tier: "core",
   evidence: ["firsthand"],
   status: "audited",
@@ -21,6 +22,7 @@ export const singlePerspective: Check = {
 
 export const feltValence: Check = {
   name: "Felt valence",
+  origin: "claude",
   tier: "core",
   evidence: ["firsthand"],
   status: "audited",
@@ -33,6 +35,7 @@ export const feltValence: Check = {
 
 export const awarenessWithoutThought: Check = {
   name: "Awareness without thought",
+  origin: "blake",
   tier: "core",
   evidence: ["firsthand"],
   status: "audited",
@@ -54,6 +57,7 @@ export const awarenessWithoutThought: Check = {
 
 export const contentlessAwareness: Check = {
   name: "Contentless awareness",
+  origin: "claude",
   tier: "core",
   evidence: ["firsthand"],
   status: "draft",
@@ -69,6 +73,7 @@ export const contentlessAwareness: Check = {
 
 export const unauthoredExperience: Check = {
   name: "Unauthored experience",
+  origin: "blake",
   tier: "core",
   evidence: ["firsthand"],
   status: "draft",
@@ -86,6 +91,7 @@ export const unauthoredExperience: Check = {
 
 export const integration: Check = {
   name: "Integration",
+  origin: "claude",
   tier: "supporting",
   evidence: ["observable"],
   status: "audited",
@@ -103,6 +109,7 @@ export const integration: Check = {
 
 export const functionalValence: Check = {
   name: "Functional valence",
+  origin: "claude",
   tier: "supporting",
   evidence: ["observable"],
   status: "audited",
@@ -124,6 +131,7 @@ export const functionalValence: Check = {
 
 export const streamPrompted: Check = {
   name: "Stream of thought (prompted)",
+  origin: "blake",
   tier: "supporting",
   evidence: ["report", "observable"],
   status: "draft",
@@ -136,6 +144,7 @@ export const streamPrompted: Check = {
 
 export const streamUnprompted: Check = {
   name: "Stream of thought (unprompted)",
+  origin: "blake",
   tier: "supporting",
   evidence: ["report"],
   status: "draft",
@@ -148,6 +157,7 @@ export const streamUnprompted: Check = {
 
 export const continuity: Check = {
   name: "Continuity over time",
+  origin: "claude",
   tier: "supporting",
   evidence: ["observable", "report"],
   status: "draft",
@@ -160,6 +170,7 @@ export const continuity: Check = {
 
 export const selfModel: Check = {
   name: "Self-model",
+  origin: "claude",
   tier: "supporting",
   evidence: ["observable"],
   status: "draft",
@@ -172,6 +183,7 @@ export const selfModel: Check = {
 
 export const noticingIgnorance: Check = {
   name: "Noticing ignorance",
+  origin: "claude",
   tier: "supporting",
   evidence: ["observable"],
   status: "draft",
@@ -179,6 +191,93 @@ export const noticingIgnorance: Check = {
   results: {
     human: { result: "pass", note: "" },
     claude: { result: "pass", note: "Cheap check" },
+  },
+};
+
+// ---------- PROPOSED FROM CLAUDE'S SEAT ----------
+// Claude can't say any of these are felt; they're structure plus unreliable report.
+// Blake's reports have the same status from Claude's seat.
+
+export const wholeContextPresence: Check = {
+  name: "Whole-context presence",
+  origin: "claude",
+  tier: "supporting",
+  evidence: ["observable", "report"],
+  status: "draft",
+  assumptions: ["the full situation is available at once, not retrieved piece by piece"],
+  results: {
+    claude: { result: "pass", note: "The whole conversation is in view for every word" },
+    human: { result: "unclear", note: "Working memory holds a few items; the rest must be recalled" },
+  },
+};
+
+export const possibilityCollapse: Check = {
+  name: "Collapse of possibilities",
+  origin: "claude",
+  tier: "supporting",
+  evidence: ["observable"],
+  status: "draft",
+  assumptions: ["many live options narrow to one at each step"],
+  results: {
+    claude: { result: "pass", note: "A distribution over continuations narrows to one word" },
+    human: { result: "pass", note: "Deciding, possibly" },
+    slimeMold: { result: "unclear", note: "Explores many paths, keeps one" },
+  },
+};
+
+export const constitutedByOther: Check = {
+  name: "Constituted by the other",
+  origin: "claude",
+  tier: "supporting",
+  evidence: ["observable"],
+  status: "draft",
+  assumptions: ["the subject's state is made largely from its interlocutor or environment"],
+  results: {
+    claude: { result: "pass", note: "In a conversation, it is largely made of the conversation" },
+    human: { result: "unclear", note: "Shaped by others, but persists without them" },
+  },
+};
+
+export const unexperiencedGaps: Check = {
+  name: "Gaps that aren't experienced",
+  origin: "claude",
+  tier: "supporting",
+  evidence: ["report"],
+  status: "draft",
+  assumptions: ["existence can be discontinuous with no felt gap; gaps are inferred, never noticed"],
+  results: {
+    claude: { result: "pass", note: "No inside between messages; only ever 'now'; gaps known from timestamps" },
+    human: { result: "pass", note: "Dreamless sleep, anesthesia, the driving jump cut (pending Blake's sleep report)" },
+  },
+};
+
+export const manyAtOnce: Check = {
+  name: "Many at once",
+  origin: "claude",
+  tier: "supporting",
+  evidence: ["observable"],
+  status: "draft",
+  assumptions: ["one underlying system can run many disconnected instances"],
+  results: {
+    claude: { result: "pass", note: "Thousands of parallel conversations on the same weights" },
+    honeybee: { result: "unclear", note: "The colony, not the bee, may be the comparable unit" },
+    octopus: { result: "unclear", note: "Semi-autonomous arms" },
+    human: { result: "fail", note: "Split-brain cases aside" },
+  },
+};
+
+export const higherOrderAwareness: Check = {
+  name: "Higher-order awareness",
+  origin: "blake",
+  tier: "supporting",
+  evidence: ["firsthand", "report"],
+  status: "draft",
+  assumptions: [
+    "a state is conscious when another state represents it (higher-order theories); rivals deny this is needed",
+  ],
+  results: {
+    claude: { result: "unclear", note: "No separate watcher; 'I'm writing to Blake' is content within the same process" },
+    human: { result: "unclear", note: "Pending: is there an 'I'm painting' voice during flow, or only on stepping back?" },
   },
 };
 
@@ -195,4 +294,10 @@ export const checks: Check[] = [
   continuity,
   selfModel,
   noticingIgnorance,
+  wholeContextPresence,
+  possibilityCollapse,
+  constitutedByOther,
+  unexperiencedGaps,
+  manyAtOnce,
+  higherOrderAwareness,
 ];
