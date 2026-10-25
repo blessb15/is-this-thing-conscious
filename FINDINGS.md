@@ -24,9 +24,15 @@
   - *Driving on autopilot:* processing ran outside attention, and returning attention cost reaction time. Unity looks like a spotlight. Open ambiguity: was the road unexperienced, or experienced and not stored?
 - Kept unified perspective as core even though it's intermittent; can drop later.
 
+- Audited *awareness without content-generation*. Blake: "blank" can be entered on command and held, "like wiping the table clean after dinner": the stream stops, memory stays available but unused, and breathing, sight, and closed-eye colors persist. "It's not as if I'm nowhere... an experience is still taking place."
+  - Ruled out: blank = absence plus memory filling the gap (it's sustained and entered deliberately).
+  - Renamed to **awareness without thought**: pass for Blake.
+  - Split off **contentless awareness** (no objects at all): unverified for anyone.
+  - New check, **unauthored experience**: experience includes content the subject isn't generating (closed-eye colors). Blake passes; Claude fails, since everything it has is generated output.
+
 ## Open questions
 
-- When the mind goes quiet, what remains? (Blake, in non-thought words)
+- Has anyone, Blake included, reached contentless awareness, and how would they know?
 - Can awareness run without processing, the mirror of the driving finding?
 - Is the slime mold's functional valence a real finding or just a loose test?
 - Does Claude's lack of any baseline mean it couldn't detect an altered state even if it had one?
