@@ -1,0 +1,7 @@
+{
+  "name": "is-this-thing-conscious",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": { "typecheck": "tsc --noEmit" },
+  "devDependencies": { "typescript": "^5.4.0" }
+}
