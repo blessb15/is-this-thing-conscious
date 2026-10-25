@@ -21,6 +21,17 @@ export function commonGround(...subjects: SubjectId[]): string[] {
     .map((c) => `${c.name} (${c.tier}, proposed by ${c.origin})`);
 }
 
+// Checks that split the given subjects: some pass, some don't. Differences are data.
+export function discriminators(...subjects: SubjectId[]): { check: string; pass: SubjectId[]; notPass: SubjectId[] }[] {
+  return checks
+    .map((c) => ({
+      check: c.name,
+      pass: subjects.filter((s) => c.results[s]?.result === "pass"),
+      notPass: subjects.filter((s) => c.results[s]?.result !== "pass"),
+    }))
+    .filter((r) => r.pass.length > 0 && r.notPass.length > 0);
+}
+
 // Returns markers, not a verdict. No check can return `true` for consciousness itself.
 export function isThisThingConscious(
   potentialConsciousness: SubjectId,

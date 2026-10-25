@@ -83,10 +83,17 @@ export const unauthoredExperience: Check = {
   assumptions: [
     "experience includes content the subject isn't deliberately generating",
     "e.g. closed-eye colors (likely phosphenes, the visual system's background activity)",
+    "outside proxy for non-reporters: spontaneous activity resembling perception, e.g. replay during sleep",
   ],
   results: {
     human: { result: "pass", note: "Blake sees colors with eyes closed that he isn't intentionally producing" },
-    claude: { result: "fail", note: "Everything is generated output; nothing arrives unbidden in that sense" },
+    claude: { result: "fail", note: "Everything is generated output; nothing arrives unbidden. (Sampling randomness is unchosen, but it's part of generation, not content arriving.)" },
+    octopus: { result: "pass", note: "'Active sleep' replays waking skin patterns (Pophale et al. 2023), possibly dream-like" },
+    honeybee: { result: "unclear", note: "Sleeps; some evidence sleep supports memory, no clear replay of content" },
+    slimeMold: { result: "unclear", note: "Endogenous oscillations, but nothing resembling perceptual content" },
+    tree: { result: "fail", note: "Endogenous rhythms (circadian), but no content to speak of" },
+    thermostat: { result: "fail", note: "" },
+    rock: { result: "fail", note: "" },
   },
 };
 
@@ -98,12 +105,18 @@ export const bodyModel: Check = {
   status: "draft",
   assumptions: [
     "experience may need a model of a body, not a body sensing the world",
+    "outside proxy: uses a model of its own size/shape in action; self/non-self discrimination alone is too cheap (plants, immune systems)",
     "dream bodies are mostly simulated yet felt; dreams are reduced-input, not zero-input (leaks run both ways)",
   ],
   results: {
     human: { result: "pass", note: "Felt body in dreams, sometimes coupled to the real body" },
     claude: { result: "fail", note: "No body-model of any kind" },
-    octopus: { result: "unclear", note: "Distributed body; unclear what model, if any, unifies it" },
+    octopus: { result: "unclear", note: "Suckers chemically avoid grabbing own skin (Nesher et al. 2014): self-recognition, possibly local rather than a whole-body model" },
+    honeybee: { result: "pass", note: "Bumblebees judge gaps relative to their own body size and turn sideways to fit (Ravi et al. 2022)" },
+    slimeMold: { result: "fail", note: "Avoids its own slime trail, but that's self/non-self, not a body-model" },
+    tree: { result: "fail", note: "Roots tell self from non-self; no model of body shape" },
+    thermostat: { result: "fail", note: "" },
+    rock: { result: "fail", note: "" },
   },
 };
 
@@ -218,6 +231,28 @@ export const noticingIgnorance: Check = {
 // Claude can't say any of these are felt; they're structure plus unreliable report.
 // Blake's reports have the same status from Claude's seat.
 
+export const carryover: Check = {
+  name: "Carryover",
+  origin: "claude",
+  tier: "supporting", // demoted on first run: passes a learning thermostat
+  evidence: ["observable"],
+  status: "audited",
+  assumptions: [
+    "past states change later responses (learning, habituation, priming)",
+    "observable half of 'continuity over time'",
+  ],
+  results: {
+    human: { result: "pass", note: "Dreams carry into the morning; learning" },
+    octopus: { result: "pass", note: "Learns quickly" },
+    honeybee: { result: "pass", note: "Learns flowers, routes" },
+    slimeMold: { result: "pass", note: "Habituates to bitter substances (Boisseau et al. 2016)" },
+    tree: { result: "pass", note: "Stress priming: earlier drought or damage changes later responses" },
+    thermostat: { result: "pass", note: "A learning thermostat adjusts to your schedule. This is why it's too loose" },
+    rock: { result: "fail", note: "Weathering records history but doesn't change its responses" },
+    claude: { result: "fail", note: "Within a conversation, yes; across conversations, no. Training was carryover, but none happens now" },
+  },
+};
+
 export const wholeContextPresence: Check = {
   name: "Whole-context presence",
   origin: "claude",
@@ -315,6 +350,7 @@ export const checks: Check[] = [
   continuity,
   selfModel,
   noticingIgnorance,
+  carryover,
   wholeContextPresence,
   possibilityCollapse,
   constitutedByOther,

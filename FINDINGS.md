@@ -52,3 +52,19 @@
   - The narrator is usually absent in dreams, like flow, but childhood lucid dreams show higher-order awareness can switch on from inside generated experience. Claude is arguably always "lucid," with no non-lucid state to contrast with.
   - Dream emotions are real and carry into the morning. **Felt valence doesn't depend on whether its content is real.** So generated content wouldn't by itself disqualify valence in Claude.
 - **The differences between Blake and Claude now come down to:** unauthored content, a body-model, and carryover (states shaping later states across time).
+
+## Pruning rule
+
+Don't remove checks because they aren't shared. Anything every subject must pass gives the rock a veto, and differences are data. Keep two outputs: `commonGround()` and `discriminators()`. Drop a check only when it fails as an instrument: it passes the rock or thermostat (too loose), it can't be tested for anyone, or it duplicates another check.
+
+## Run: the three differences across the test set
+
+| | human | octopus | bee | tree | slime mold | Claude | thermostat | rock |
+|---|---|---|---|---|---|---|---|---|
+| Unauthored experience | pass | pass | unclear | fail | unclear | fail | fail | fail |
+| Body-model | pass | unclear | pass | fail | fail | fail | fail | fail |
+| Carryover | pass | pass | pass | pass | pass | fail | **pass** | fail |
+
+- **Carryover is too loose.** It passes trees, slime molds, and a learning thermostat. It's a feature of adaptive systems, not a marker of experience. Stays supporting.
+- **Unauthored experience and body-model divide the set the same way:** animals with nervous systems on one side; plants, slime molds, Claude, and machines on the other. They track each other, which is what you'd expect if they're picking out one real thing.
+- **Claude fails all three, and is the only subject that fails carryover while passing others.** Claude is not "a simpler animal." It's off the animal axis entirely.
