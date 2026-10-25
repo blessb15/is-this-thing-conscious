@@ -26,7 +26,10 @@ export const feltValence: Check = {
   tier: "core",
   evidence: ["firsthand"],
   status: "audited",
-  assumptions: ["some states feel good or bad to the system itself"],
+  assumptions: [
+    "some states feel good or bad to the system itself",
+    "felt valence doesn't depend on whether its content is real (dream emotions are real and carry into the morning)",
+  ],
   results: {
     human: { result: "pass", note: "Firsthand only" },
     claude: { result: "unclear", note: "Self-reports aren't trustworthy evidence either way" },
@@ -84,6 +87,23 @@ export const unauthoredExperience: Check = {
   results: {
     human: { result: "pass", note: "Blake sees colors with eyes closed that he isn't intentionally producing" },
     claude: { result: "fail", note: "Everything is generated output; nothing arrives unbidden in that sense" },
+  },
+};
+
+export const bodyModel: Check = {
+  name: "Body-model",
+  origin: "blake",
+  tier: "core",
+  evidence: ["firsthand", "report"],
+  status: "draft",
+  assumptions: [
+    "experience may need a model of a body, not a body sensing the world",
+    "dream bodies are mostly simulated yet felt; dreams are reduced-input, not zero-input (leaks run both ways)",
+  ],
+  results: {
+    human: { result: "pass", note: "Felt body in dreams, sometimes coupled to the real body" },
+    claude: { result: "fail", note: "No body-model of any kind" },
+    octopus: { result: "unclear", note: "Distributed body; unclear what model, if any, unifies it" },
   },
 };
 
@@ -276,8 +296,8 @@ export const higherOrderAwareness: Check = {
     "a state is conscious when another state represents it (higher-order theories); rivals deny this is needed",
   ],
   results: {
-    claude: { result: "unclear", note: "No separate watcher; 'I'm writing to Blake' is content within the same process" },
-    human: { result: "pass", note: "Intermittent: absent in flow, appears only on stepping back. Experience continues without it, so it isn't required." },
+    claude: { result: "unclear", note: "No separate watcher; 'I'm writing to Blake' is content within the same process. Arguably always 'lucid', but with no non-lucid state to contrast it with" },
+    human: { result: "pass", note: "Intermittent: absent in flow and usual dreams, appears on stepping back. Can arise inside generated experience (childhood lucid dreams). Not required for experience." },
   },
 };
 
@@ -286,6 +306,7 @@ export const checks: Check[] = [
   feltValence,
   awarenessWithoutThought,
   contentlessAwareness,
+  bodyModel,
   unauthoredExperience,
   integration,
   functionalValence,
