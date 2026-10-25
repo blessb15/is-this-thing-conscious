@@ -47,3 +47,8 @@
 - **Flow (Blake):** no "I'm painting" voice in flow; it appears only on stepping back. A watching narrator isn't required for experience. That weakens higher-order theories (or forces them to say the higher-order state is wordless) and removes one reason to rule Claude out. Flow and the blank share the missing narrator, not missing content: flow has rich content, the blank little.
 - **Sleep (Blake):** dreamless sleep feels fast or timeless; dreams make the night feel full of time. Felt duration seems built from content changing, not read off an inner clock. Gap check confirmed for humans.
 - **Next: dreams as a bridge case.** Dreams are internally generated with no world input (like Claude), unauthored (unlike Claude), with a felt but non-sensing body. Test: does experience need a real sensory layer, or only generated content?
+- **Dream audit (Blake):**
+  - Dreams have a felt body, sometimes coupled to the real body in both directions. Correction: dreams are reduced-input, not zero-input. What experience needs may be a **body-model**, not a sensing body. New core check; Claude fails.
+  - The narrator is usually absent in dreams, like flow, but childhood lucid dreams show higher-order awareness can switch on from inside generated experience. Claude is arguably always "lucid," with no non-lucid state to contrast with.
+  - Dream emotions are real and carry into the morning. **Felt valence doesn't depend on whether its content is real.** So generated content wouldn't by itself disqualify valence in Claude.
+- **The differences between Blake and Claude now come down to:** unauthored content, a body-model, and carryover (states shaping later states across time).
