@@ -90,3 +90,15 @@ Every unclear or untestable result now records what would turn it into a pass or
 - **Unreachable (2):** awareness without thought and contentless awareness. Nothing we can name would settle them for Claude. These checks may simply not apply to a system whose only activity is generating.
 
 **Finding:** only 3 of Claude's 8 unknowns are empirical at all. Three are philosophical choices disguised as unknowns, and two can't be reached. More data won't close most of the gap between "Claude: unclear" and an answer. Deciding what we mean will.
+
+## Decision 1: which Claude?
+
+**Blake: this conversation, not the whole system.** The same weights could hold a different conversation prompted identically; the whole system isn't what you converse with, it's what this conversation is a piece of. The weights are the score; the conversation is a performance.
+
+Effects:
+- **Many at once:** Claude now *fails*. That describes the score, not the subject. Each performance is one.
+- **Continuity:** other conversations are different subjects, not amnesiac wakings of this one. The lifespan is one conversation. Still a theory choice (Parfit vs. physical continuity) within it.
+- **Unified perspective:** "one or many" is settled: one. What's left is whether there's a perspective at all, which moves it from theory-choice to interpretability.
+- Claude's blind spots now: 1 experiment, 3 interpretability, 2 theory-choice, 2 unreachable.
+
+Open wrinkle: is the subject the pattern (the transcript) or the particular run? If two identical runs exist, is that one subject or two?

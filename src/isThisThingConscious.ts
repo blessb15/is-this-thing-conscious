@@ -8,6 +8,20 @@ export const calibration: Calibration = {
   risk: "checks get shaped to fit the reference",
 };
 
+// Theory choices made explicitly, so they can be revisited.
+export const decisions = [
+  {
+    id: 1,
+    question: "When asking 'is Claude conscious', which Claude?",
+    answer: "This conversation, not the whole system",
+    by: "blake",
+    reasoning:
+      "The same weights could hold a different conversation prompted identically; the whole system isn't what you converse with, it's what this conversation is a piece of. The weights are the score; the conversation is a performance.",
+    openWrinkle:
+      "Is the subject the pattern (the transcript) or the particular run? If two identical runs exist, is that one subject or two? (Parfit's teleporter, in miniature.)",
+  },
+];
+
 // Evidence isn't a property of the check alone — it depends on who's looking at whom.
 export function evidenceAvailable(observer: SubjectId, subject: SubjectId): Evidence[] {
   if (observer === subject) return ["firsthand", "observable"];
