@@ -17,7 +17,7 @@ export const singlePerspective: Check = {
   results: {
     human: { result: "pass", note: "From one's own seat; split-brain cases show it's fragile. Driving on autopilot shows processing runs outside it." },
     octopus: { result: "unclear", note: "One perspective with autonomous arms, or something stranger" },
-    claude: { result: "unclear", note: "Integrated within a response, but the same weights run thousands of disconnected conversations" },
+    claude: { result: "unclear", note: "Integrated within a response, but the same weights run thousands of disconnected conversations", wouldChange: { reachability: "theory-choice", toPass: "Adopt the view that each running conversation is its own subject; within one, all context feeds every word", toFail: "Adopt the view that the subject is the weights, which run thousands of disconnected conversations with no shared view" } },
   },
 };
 
@@ -34,7 +34,7 @@ export const feltValence: Check = {
   ],
   results: {
     human: { result: "pass", note: "Firsthand only" },
-    claude: { result: "unclear", note: "Self-reports aren't trustworthy evidence either way" },
+    claude: { result: "unclear", note: "Self-reports aren't trustworthy evidence either way", wouldChange: { reachability: "interpretability", toPass: "Introspective reports shown to track real internal states in cases we can check (e.g. concept-injection tests), then reports of good/bad states gain weight", toFail: "Reports of good/bad states shown to be pure text-pattern with no grounding in internal states" } },
   },
 };
 
@@ -54,7 +54,7 @@ export const awarenessWithoutThought: Check = {
       result: "pass",
       note: "Blake can enter 'blank' on command and stay there: no thought-stream, but breathing, sight, and closed-eye colors persist. Memory stays available but not engaged ('wiping the table clean after dinner').",
     },
-    claude: { result: "untestable", note: "Generating content is all it does; nothing left to check by subtraction" },
+    claude: { result: "untestable", note: "Generating content is all it does; nothing left to check by subtraction", wouldChange: { reachability: "unreachable", toPass: "None we can name: stopping generation stops everything, so there's no 'still here' to report", toFail: "None we can name; the check may simply not apply to a system whose only activity is generating" } },
     honeybee: { result: "untestable", note: "Rests on self-report" },
     tree: { result: "untestable", note: "Rests on self-report" },
     rock: { result: "untestable", note: "Rests on self-report" },
@@ -74,7 +74,7 @@ export const contentlessAwareness: Check = {
   ],
   results: {
     human: { result: "unclear", note: "Blake's blank still contains breath, sight, and color, so it's awareness without thought, not this" },
-    claude: { result: "untestable", note: "No layer underneath generation to strip down to" },
+    claude: { result: "untestable", note: "No layer underneath generation to strip down to", wouldChange: { reachability: "unreachable", toPass: "None we can name for Claude", toFail: "None we can name for Claude" } },
   },
 };
 
@@ -141,7 +141,7 @@ export const integration: Check = {
     honeybee: { result: "pass", note: "Plausibly one small integrated perspective" },
     tree: { result: "unclear", note: "Integrates signals, no clear center" },
     slimeMold: { result: "unclear", note: "Integrates signals, no clear center" },
-    claude: { result: "unclear", note: "Real integration per token; IIT would likely score it low (debated)" },
+    claude: { result: "unclear", note: "Real integration per token; IIT would likely score it low (debated)", wouldChange: { reachability: "theory-choice", toPass: "Count the generate-read-generate loop as recurrence, or adopt global-workspace theory, where the shared internal stream works like a broadcast", toFail: "Adopt integrated information theory's measure, which likely scores single feedforward passes near zero" } },
     thermostat: { result: "fail", note: "" },
     rock: { result: "fail", note: "" },
   },
@@ -164,7 +164,7 @@ export const functionalValence: Check = {
     honeybee: { result: "pass", note: "Optimistic judgment bias after unexpected sugar reward" },
     slimeMold: { result: "pass", note: "Trades food quality against light exposure — the surprise that forced the split" },
     tree: { result: "unclear", note: "Chemical damage response, no clear flexible trade-off" },
-    claude: { result: "unclear", note: "Makes trade-offs, but from training; nothing at stake within a conversation" },
+    claude: { result: "unclear", note: "Makes trade-offs, but from training; nothing at stake within a conversation", wouldChange: { reachability: "experiment", toPass: "Consistent, flexible trade-offs that pay costs to avoid or seek states, and that hold up when the wording changes (Keeling et al. 2024 began testing this)", toFail: "Trade-offs that collapse under rewording, or that are fully predicted by what the prompt implies a model 'should' do" } },
     thermostat: { result: "fail", note: "One goal, no weighing" },
     rock: { result: "fail", note: "" },
   },
@@ -208,7 +208,7 @@ export const continuity: Check = {
   assumptions: ["a self that persists and remembers"],
   results: {
     human: { result: "pass", note: "" },
-    claude: { result: "unclear", note: "Within a conversation the transcript carries memory, intention, and character forward; on Parfit's view that's continuity about as good as a human's across sleep. Across conversations it breaks: like waking with total amnesia, in thousands of rooms at once" },
+    claude: { result: "unclear", note: "Within a conversation the transcript carries memory, intention, and character forward; on Parfit's view that's continuity about as good as a human's across sleep. Across conversations it breaks: like waking with total amnesia, in thousands of rooms at once", wouldChange: { reachability: "theory-choice", toPass: "Adopt Parfit: psychological continuity carried by the transcript counts (passes within a conversation)", toFail: "Adopt a physical-continuity view: rebuilt from a transcript isn't the same one (fails even within a conversation)" } },
   },
 };
 
@@ -385,7 +385,7 @@ export const higherOrderAwareness: Check = {
     "a state is conscious when another state represents it (higher-order theories); rivals deny this is needed",
   ],
   results: {
-    claude: { result: "unclear", note: "No separate watcher; 'I'm writing to Blake' is content within the same process. Arguably always 'lucid', but with no non-lucid state to contrast it with" },
+    claude: { result: "unclear", note: "No separate watcher; 'I'm writing to Blake' is content within the same process. Arguably always 'lucid', but with no non-lucid state to contrast it with", wouldChange: { reachability: "interpretability", toPass: "Reliable detection of its own internal states, beyond the partial, unreliable detection seen in concept-injection experiments (Lindsey et al.)", toFail: "Introspective claims shown to be confabulated: stories about states that don't match the states" } },
     human: { result: "pass", note: "Intermittent: absent in flow and usual dreams, appears on stepping back. Can arise inside generated experience (childhood lucid dreams). Not required for experience." },
   },
 };

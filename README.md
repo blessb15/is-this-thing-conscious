@@ -29,6 +29,7 @@ A being could fail identity and pass consciousness, like someone with no memory,
 - `commonGround(subjects, axis?)`: checks every subject passes.
 - `discriminators(subjects, axis?)`: checks where some pass and some fail.
 - `unknowns(subjects, axis?)`: blind spots, kept apart so unknowns don't pose as differences.
+- `blindSpots(subject)`: a subject's unknowns, grouped by what could settle them: experiment, interpretability, theory choice, or unreachable.
 
 ## Current state
 

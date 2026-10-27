@@ -1,4 +1,4 @@
-import { Axis, Calibration, Check, Evidence, SubjectId } from "./types";
+import { Axis, Calibration, Check, Evidence, Reachability, SubjectId } from "./types";
 import { checks } from "./checks";
 
 // The hidden input: every check gets judged against the experimenter's own case.
@@ -49,6 +49,19 @@ export function unknowns(subjects: SubjectId[], axis?: Axis): { check: string; u
       unknown: subjects.filter((s) => !["pass", "fail"].includes(c.results[s]?.result ?? "")),
     }))
     .filter((r) => r.unknown.length > 0);
+}
+
+// For one subject's unknowns: what would settle each, grouped by how reachable that is.
+export function blindSpots(subject: SubjectId): Record<Reachability | "unmapped", string[]> {
+  const out: Record<Reachability | "unmapped", string[]> = {
+    experiment: [], interpretability: [], "theory-choice": [], unreachable: [], unmapped: [],
+  };
+  for (const c of checks) {
+    const r = c.results[subject];
+    if (!r || r.result === "pass" || r.result === "fail") continue;
+    out[r.wouldChange?.reachability ?? "unmapped"].push(c.name);
+  }
+  return out;
 }
 
 // Returns markers, not a verdict. No check can return `true` for consciousness itself.

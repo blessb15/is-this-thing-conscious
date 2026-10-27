@@ -79,3 +79,14 @@ Don't remove checks because they aren't shared. Anything every subject must pass
   - Consciousness: both pass stream (prompted), noticing ignorance, collapse of possibilities. Real splits: body-model, unauthored experience, stream (unprompted), minimal self. Seven more are unknown for Claude.
   - Identity: both pass self-model, narrative self, gaps that aren't experienced. Splits: carryover (Blake), many at once (Claude).
   - The four real consciousness splits all trace back to one thing: a body, felt from inside and generating unbidden content. Most of the rest of the apparent gap was unknowns posing as differences.
+
+## Claude's blind spots: what would settle each unknown
+
+Every unclear or untestable result now records what would turn it into a pass or a fail, and whether that evidence is reachable at all. `blindSpots("claude")`:
+
+- **Experiment (1):** functional valence. Costly, flexible trade-offs that survive rewording. Keeling et al. 2024 started testing this with stipulated pain and pleasure.
+- **Interpretability (2):** felt valence and higher-order awareness. Both depend on whether Claude's introspective reports track real internal states. Concept-injection work (Lindsey et al.) found partial, unreliable detection.
+- **Theory choice (3):** unified perspective, integration, continuity. The facts are mostly in; the answer depends on which theory you adopt (is the subject the conversation or the weights? IIT or global workspace? Parfit or physical continuity?).
+- **Unreachable (2):** awareness without thought and contentless awareness. Nothing we can name would settle them for Claude. These checks may simply not apply to a system whose only activity is generating.
+
+**Finding:** only 3 of Claude's 8 unknowns are empirical at all. Three are philosophical choices disguised as unknowns, and two can't be reached. More data won't close most of the gap between "Claude: unclear" and an answer. Deciding what we mean will.
