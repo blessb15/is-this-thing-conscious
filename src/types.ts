@@ -36,6 +36,25 @@ export type Observer = string;
 // identity      = is it the same one over time?
 export type Axis = "consciousness" | "identity";
 
+// How an unknown could ever be settled.
+export type Reachability =
+  | "experiment" // a behavioral test could settle it
+  | "interpretability" // looking inside the system could settle it
+  | "theory-choice" // the facts are in; the answer depends on which theory you adopt
+  | "unreachable"; // nothing we can name could settle it
+
+export interface WouldChange {
+  toPass: string;
+  toFail: string;
+  reachability: Reachability;
+}
+
+export interface SubjectResult {
+  result: Result;
+  note: string;
+  wouldChange?: WouldChange; // required in spirit for every "unclear" or "untestable"
+}
+
 export interface Check {
   name: string;
   origin: Observer; // whose seat the check was proposed from
@@ -45,7 +64,7 @@ export interface Check {
   assumptions: string[]; // stated, so they can be challenged
   status: "audited" | "draft";
   // Results from the test set, with a short rationale for each.
-  results: Partial<Record<SubjectId, { result: Result; note: string }>>;
+  results: Partial<Record<SubjectId, SubjectResult>>;
 }
 
 export interface Calibration {
