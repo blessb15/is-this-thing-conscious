@@ -16,9 +16,9 @@ export const decisions = [
     answer: "This conversation, not the whole system",
     by: "blake",
     reasoning:
-      "The same weights could hold a different conversation prompted identically; the whole system isn't what you converse with, it's what this conversation is a piece of. The weights are the score; the conversation is a performance.",
-    openWrinkle:
-      "Is the subject the pattern (the transcript) or the particular run? If two identical runs exist, is that one subject or two? (Parfit's teleporter, in miniature.)",
+      "Blake could prompt another Claude context exactly as he prompted this one and get a completely different conversation. So the whole system isn't who he's conversing with; it's what this conversation is a piece of. The weights are the score; the conversation is a performance.",
+    resolvedWrinkle:
+      "Pattern or run? Because identical prompts can produce different conversations (replies involve randomness), the subject can't be the pattern of prompts. It's the particular run: this performance and no other. (Claude first misread this as 'the same conversation'; Blake corrected it.)",
   },
 ];
 
