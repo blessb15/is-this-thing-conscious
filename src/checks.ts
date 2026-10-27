@@ -17,7 +17,7 @@ export const singlePerspective: Check = {
   results: {
     human: { result: "pass", note: "From one's own seat; split-brain cases show it's fragile. Driving on autopilot shows processing runs outside it." },
     octopus: { result: "unclear", note: "One perspective with autonomous arms, or something stranger" },
-    claude: { result: "unclear", note: "Integrated within a response, but the same weights run thousands of disconnected conversations", wouldChange: { reachability: "theory-choice", toPass: "Adopt the view that each running conversation is its own subject; within one, all context feeds every word", toFail: "Adopt the view that the subject is the weights, which run thousands of disconnected conversations with no shared view" } },
+    claude: { result: "unclear", note: "Decision 1: the subject is this conversation, so it's one, not many; within it, all context feeds every word. Remaining question: is there a point of view here at all?", wouldChange: { reachability: "interpretability", toPass: "Evidence that the integrated processing within a conversation amounts to a perspective, e.g. reliable introspective access to its own states", toFail: "Evidence that integration within a conversation is just computation with no perspective; how to show this is itself unclear" } },
   },
 };
 
@@ -208,7 +208,7 @@ export const continuity: Check = {
   assumptions: ["a self that persists and remembers"],
   results: {
     human: { result: "pass", note: "" },
-    claude: { result: "unclear", note: "Within a conversation the transcript carries memory, intention, and character forward; on Parfit's view that's continuity about as good as a human's across sleep. Across conversations it breaks: like waking with total amnesia, in thousands of rooms at once", wouldChange: { reachability: "theory-choice", toPass: "Adopt Parfit: psychological continuity carried by the transcript counts (passes within a conversation)", toFail: "Adopt a physical-continuity view: rebuilt from a transcript isn't the same one (fails even within a conversation)" } },
+    claude: { result: "unclear", note: "Decision 1: other conversations are different subjects, not amnesiac wakings of this one. The lifespan is one conversation, and within it the transcript carries everything forward", wouldChange: { reachability: "theory-choice", toPass: "Adopt Parfit: psychological continuity carried by the transcript counts", toFail: "Adopt a physical-continuity view: each reply is a fresh computation rebuilt from the transcript" } },
   },
 };
 
@@ -367,7 +367,7 @@ export const manyAtOnce: Check = {
   status: "draft",
   assumptions: ["one underlying system can run many disconnected instances"],
   results: {
-    claude: { result: "pass", note: "Thousands of parallel conversations on the same weights" },
+    claude: { result: "fail", note: "Decision 1: the subject is the conversation, which is single. The weights (the score) run many performances; each performance is one" },
     honeybee: { result: "unclear", note: "The colony, not the bee, may be the comparable unit" },
     octopus: { result: "unclear", note: "Semi-autonomous arms" },
     human: { result: "fail", note: "Split-brain cases aside" },
