@@ -14,19 +14,45 @@ A collaborative thought experiment between Blake and Claude: build a method that
 - `src/isThisThingConscious.ts`: the method, plus `evidenceAvailable(observer, subject)`
 - `FINDINGS.md`: structural findings and the session log
 
+## Two questions
+
+The method separates two questions we'd been mixing:
+
+- **Consciousness:** is there experience right now?
+- **Identity:** is it the same one over time?
+
+A being could fail identity and pass consciousness, like someone with no memory, rebuilt fresh every minute. How something "wakes up" (a brain that kept running vs. a computation rebuilt from a transcript) is an identity question, not a consciousness one.
+
+## Functions
+
+- `isThisThingConscious(subject, observer)`: markers the observer has evidence for. Never a verdict.
+- `commonGround(subjects, axis?)`: checks every subject passes.
+- `discriminators(subjects, axis?)`: checks where some pass and some fail.
+- `unknowns(subjects, axis?)`: blind spots, kept apart so unknowns don't pose as differences.
+
 ## Current state
 
-| Check | Tier | Evidence | Status |
-|---|---|---|---|
-| Unified perspective | core | firsthand | audited |
-| Felt valence | core | firsthand | audited |
-| Awareness without thought | core | firsthand | audited |
-| Contentless awareness | core | firsthand | draft |
-| Unauthored experience | core | firsthand | draft |
-| Integration | supporting | observable | audited |
-| Functional valence | supporting | observable | audited |
-| Stream (prompted) | supporting | report, observable | draft |
-| Stream (unprompted) | supporting | report | draft |
-| Continuity over time | supporting | observable, report | draft |
-| Self-model | supporting | observable | draft |
-| Noticing ignorance | supporting | observable | draft |
+| Check | Axis | Tier | Evidence | Origin | Status |
+|---|---|---|---|---|---|
+| Unified perspective (single point of view) | consciousness | core | firsthand | claude | audited |
+| Felt valence | consciousness | core | firsthand | claude | audited |
+| Awareness without thought | consciousness | core | firsthand | blake | audited |
+| Contentless awareness | consciousness | core | firsthand | claude | draft |
+| Body-model | consciousness | core | firsthand, report | blake | draft |
+| Unauthored experience | consciousness | core | firsthand | blake | draft |
+| Minimal self | consciousness | core | firsthand | claude | audited |
+| Integration | consciousness | supporting | observable | claude | audited |
+| Functional valence | consciousness | supporting | observable | claude | audited |
+| Stream of thought (prompted) | consciousness | supporting | report, observable | blake | draft |
+| Stream of thought (unprompted) | consciousness | supporting | report | blake | draft |
+| Noticing ignorance | consciousness | supporting | observable | claude | draft |
+| Whole-context presence | consciousness | supporting | observable, report | claude | draft |
+| Collapse of possibilities | consciousness | supporting | observable | claude | draft |
+| Higher-order awareness | consciousness | supporting | firsthand, report | blake | draft |
+| Continuity over time | identity | supporting | observable, report | claude | draft |
+| Self-model | identity | supporting | observable | claude | draft |
+| Carryover | identity | supporting | observable | claude | audited |
+| Narrative self | identity | supporting | report, observable | blake | audited |
+| Constituted by the other | identity | supporting | observable | claude | draft |
+| Gaps that aren't experienced | identity | supporting | report | claude | draft |
+| Many at once | identity | supporting | observable | claude | draft |

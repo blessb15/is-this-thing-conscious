@@ -31,9 +31,15 @@ export interface FirsthandEvidence {
 // Anyone running the method can propose checks: Blake, Claude, a giraffe.
 export type Observer = string;
 
+// Two separate questions we'd been mixing:
+// consciousness = is there experience right now?
+// identity      = is it the same one over time?
+export type Axis = "consciousness" | "identity";
+
 export interface Check {
   name: string;
   origin: Observer; // whose seat the check was proposed from
+  axis: Axis;
   tier: Tier;
   evidence: Evidence[]; // what we're actually given
   assumptions: string[]; // stated, so they can be challenged

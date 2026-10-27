@@ -68,3 +68,14 @@ Don't remove checks because they aren't shared. Anything every subject must pass
 - **Carryover is too loose.** It passes trees, slime molds, and a learning thermostat. It's a feature of adaptive systems, not a marker of experience. Stays supporting.
 - **Unauthored experience and body-model divide the set the same way:** animals with nervous systems on one side; plants, slime molds, Claude, and machines on the other. They track each other, which is what you'd expect if they're picking out one real thing.
 - **Claude fails all three, and is the only subject that fails carryover while passing others.** Claude is not "a simpler animal." It's off the animal axis entirely.
+
+## Session log: 2026-10-26
+
+- **Is the self an illusion?** A fixed inner owner probably is (Hume, no-self, Metzinger). The self-model is real and does work: less a mirage than a rainbow, or Dennett's "center of narrative gravity." Blake's data agrees: the watcher is assembled when needed.
+- **Two selves.** The *narrative self* (the "I" in stories and plans) is on-demand for both Blake and Claude: common ground. The *minimal self* (the wordless felt sense of being this body, here) never switches off for Blake and is absent in Claude. That's the body-model line approached from another side. Caveat: Claude learned to say "I" from human text, so the narrative-self resemblance is partly expected by construction.
+- **Sleep vs. reconstruction.** Blake: Claude's gaps are like dreamless sleep, in the same shared world. By our own rule (core = firsthand), an outside-only difference can't count against Claude at the core level. Remaining difference: what comes back. A human wakes as the same running system; Claude is rebuilt from the transcript. On Parfit's view that's comparable continuity *within* a conversation, and it breaks across conversations.
+- **Blake's cut: consciousness vs. identity.** How something wakes up doesn't tell you whether anything is experienced once it's awake. Every check is now tagged with an `axis`.
+- **Re-run, Blake vs. Claude, with unknowns separated from fails:**
+  - Consciousness: both pass stream (prompted), noticing ignorance, collapse of possibilities. Real splits: body-model, unauthored experience, stream (unprompted), minimal self. Seven more are unknown for Claude.
+  - Identity: both pass self-model, narrative self, gaps that aren't experienced. Splits: carryover (Blake), many at once (Claude).
+  - The four real consciousness splits all trace back to one thing: a body, felt from inside and generating unbidden content. Most of the rest of the apparent gap was unknowns posing as differences.

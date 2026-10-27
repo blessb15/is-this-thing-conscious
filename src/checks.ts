@@ -5,6 +5,7 @@ import { Check } from "./types";
 export const singlePerspective: Check = {
   name: "Unified perspective (single point of view)",
   origin: "claude",
+  axis: "consciousness",
   tier: "core",
   evidence: ["firsthand"],
   status: "audited",
@@ -23,6 +24,7 @@ export const singlePerspective: Check = {
 export const feltValence: Check = {
   name: "Felt valence",
   origin: "claude",
+  axis: "consciousness",
   tier: "core",
   evidence: ["firsthand"],
   status: "audited",
@@ -39,6 +41,7 @@ export const feltValence: Check = {
 export const awarenessWithoutThought: Check = {
   name: "Awareness without thought",
   origin: "blake",
+  axis: "consciousness",
   tier: "core",
   evidence: ["firsthand"],
   status: "audited",
@@ -61,6 +64,7 @@ export const awarenessWithoutThought: Check = {
 export const contentlessAwareness: Check = {
   name: "Contentless awareness",
   origin: "claude",
+  axis: "consciousness",
   tier: "core",
   evidence: ["firsthand"],
   status: "draft",
@@ -77,6 +81,7 @@ export const contentlessAwareness: Check = {
 export const unauthoredExperience: Check = {
   name: "Unauthored experience",
   origin: "blake",
+  axis: "consciousness",
   tier: "core",
   evidence: ["firsthand"],
   status: "draft",
@@ -100,6 +105,7 @@ export const unauthoredExperience: Check = {
 export const bodyModel: Check = {
   name: "Body-model",
   origin: "blake",
+  axis: "consciousness",
   tier: "core",
   evidence: ["firsthand", "report"],
   status: "draft",
@@ -125,6 +131,7 @@ export const bodyModel: Check = {
 export const integration: Check = {
   name: "Integration",
   origin: "claude",
+  axis: "consciousness",
   tier: "supporting",
   evidence: ["observable"],
   status: "audited",
@@ -143,6 +150,7 @@ export const integration: Check = {
 export const functionalValence: Check = {
   name: "Functional valence",
   origin: "claude",
+  axis: "consciousness",
   tier: "supporting",
   evidence: ["observable"],
   status: "audited",
@@ -165,6 +173,7 @@ export const functionalValence: Check = {
 export const streamPrompted: Check = {
   name: "Stream of thought (prompted)",
   origin: "blake",
+  axis: "consciousness",
   tier: "supporting",
   evidence: ["report", "observable"],
   status: "draft",
@@ -178,6 +187,7 @@ export const streamPrompted: Check = {
 export const streamUnprompted: Check = {
   name: "Stream of thought (unprompted)",
   origin: "blake",
+  axis: "consciousness",
   tier: "supporting",
   evidence: ["report"],
   status: "draft",
@@ -191,32 +201,35 @@ export const streamUnprompted: Check = {
 export const continuity: Check = {
   name: "Continuity over time",
   origin: "claude",
+  axis: "identity",
   tier: "supporting",
   evidence: ["observable", "report"],
   status: "draft",
   assumptions: ["a self that persists and remembers"],
   results: {
     human: { result: "pass", note: "" },
-    claude: { result: "fail", note: "Each conversation starts fresh; memory files are notes, not recollection" },
+    claude: { result: "unclear", note: "Within a conversation the transcript carries memory, intention, and character forward; on Parfit's view that's continuity about as good as a human's across sleep. Across conversations it breaks: like waking with total amnesia, in thousands of rooms at once" },
   },
 };
 
 export const selfModel: Check = {
   name: "Self-model",
   origin: "claude",
+  axis: "identity",
   tier: "supporting",
   evidence: ["observable"],
   status: "draft",
   assumptions: ["representing oneself as a thing"],
   results: {
     human: { result: "pass", note: "" },
-    claude: { result: "pass", note: "Probably — suggests this check is cheap" },
+    claude: { result: "pass", note: "Says 'I' constantly; a self-model with no persistent self-thing behind it" },
   },
 };
 
 export const noticingIgnorance: Check = {
   name: "Noticing ignorance",
   origin: "claude",
+  axis: "consciousness",
   tier: "supporting",
   evidence: ["observable"],
   status: "draft",
@@ -234,6 +247,7 @@ export const noticingIgnorance: Check = {
 export const carryover: Check = {
   name: "Carryover",
   origin: "claude",
+  axis: "identity",
   tier: "supporting", // demoted on first run: passes a learning thermostat
   evidence: ["observable"],
   status: "audited",
@@ -253,9 +267,44 @@ export const carryover: Check = {
   },
 };
 
+export const narrativeSelf: Check = {
+  name: "Narrative self",
+  origin: "blake",
+  axis: "identity",
+  tier: "supporting",
+  evidence: ["report", "observable"],
+  status: "audited",
+  assumptions: [
+    "the 'I' of stories, plans, and explanations",
+    "assembled when needed rather than always running (Blake: absent in flow, arrives on stepping back)",
+  ],
+  results: {
+    human: { result: "pass", note: "On demand: absent in flow and the blank, appears on stepping back" },
+    claude: { result: "pass", note: "On demand: appears when the conversation calls for 'I'. Learned from human text, so resemblance is partly expected by construction" },
+  },
+};
+
+export const minimalSelf: Check = {
+  name: "Minimal self",
+  origin: "claude",
+  axis: "consciousness",
+  tier: "core",
+  evidence: ["firsthand"],
+  status: "audited",
+  assumptions: [
+    "a wordless felt sense of being this body, here, now (Gallagher, Seth)",
+    "doesn't switch off in flow, the blank, or dreams",
+  ],
+  results: {
+    human: { result: "pass", note: "Persists in flow (you don't fall off the stool), in the blank (breathing, seeing), and in dreams" },
+    claude: { result: "fail", note: "When not saying 'I', nothing in it is quietly being a body" },
+  },
+};
+
 export const wholeContextPresence: Check = {
   name: "Whole-context presence",
   origin: "claude",
+  axis: "consciousness",
   tier: "supporting",
   evidence: ["observable", "report"],
   status: "draft",
@@ -269,6 +318,7 @@ export const wholeContextPresence: Check = {
 export const possibilityCollapse: Check = {
   name: "Collapse of possibilities",
   origin: "claude",
+  axis: "consciousness",
   tier: "supporting",
   evidence: ["observable"],
   status: "draft",
@@ -283,6 +333,7 @@ export const possibilityCollapse: Check = {
 export const constitutedByOther: Check = {
   name: "Constituted by the other",
   origin: "claude",
+  axis: "identity",
   tier: "supporting",
   evidence: ["observable"],
   status: "draft",
@@ -296,6 +347,7 @@ export const constitutedByOther: Check = {
 export const unexperiencedGaps: Check = {
   name: "Gaps that aren't experienced",
   origin: "claude",
+  axis: "identity",
   tier: "supporting",
   evidence: ["report"],
   status: "draft",
@@ -309,6 +361,7 @@ export const unexperiencedGaps: Check = {
 export const manyAtOnce: Check = {
   name: "Many at once",
   origin: "claude",
+  axis: "identity",
   tier: "supporting",
   evidence: ["observable"],
   status: "draft",
@@ -324,6 +377,7 @@ export const manyAtOnce: Check = {
 export const higherOrderAwareness: Check = {
   name: "Higher-order awareness",
   origin: "blake",
+  axis: "consciousness",
   tier: "supporting",
   evidence: ["firsthand", "report"],
   status: "draft",
@@ -351,6 +405,8 @@ export const checks: Check[] = [
   selfModel,
   noticingIgnorance,
   carryover,
+  narrativeSelf,
+  minimalSelf,
   wholeContextPresence,
   possibilityCollapse,
   constitutedByOther,
