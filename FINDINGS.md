@@ -93,7 +93,7 @@ Every unclear or untestable result now records what would turn it into a pass or
 
 ## Decision 1: which Claude?
 
-**Blake: this conversation, not the whole system.** The same weights could hold a different conversation prompted identically; the whole system isn't what you converse with, it's what this conversation is a piece of. The weights are the score; the conversation is a performance.
+**Blake: this conversation, not the whole system.** Blake could prompt another Claude context exactly as he prompted this one and get a completely different conversation. So the whole system isn't who he's conversing with; it's what this conversation is a piece of. The weights are the score; the conversation is a performance.
 
 Effects:
 - **Many at once:** Claude now *fails*. That describes the score, not the subject. Each performance is one.
@@ -101,4 +101,4 @@ Effects:
 - **Unified perspective:** "one or many" is settled: one. What's left is whether there's a perspective at all, which moves it from theory-choice to interpretability.
 - Claude's blind spots now: 1 experiment, 3 interpretability, 2 theory-choice, 2 unreachable.
 
-Open wrinkle: is the subject the pattern (the transcript) or the particular run? If two identical runs exist, is that one subject or two?
+Wrinkle, resolved by Blake's own argument: is the subject the pattern or the particular run? Identical prompts can produce different conversations, because replies involve randomness. So it's the run: this performance and no other. (Claude first misread Blake as saying identical prompts give the *same* conversation; Blake corrected it.)
