@@ -313,7 +313,7 @@ export const errorMonitoring: Check = {
     "requires an intention to compare against, separate from the output",
   ],
   results: {
-    human: { result: "pass", note: "Rubber band: meant 'rubber band', said 'yellow', 'water'; noticed instantly and laughed" },
+    human: { result: "pass", note: "Rubber band: meant 'rubber band', said 'yellow', 'water' (band wasn't yellow, no water nearby); noticed instantly and laughed. Guess: an unspoken middle step, rubber -> rubber duck -> yellow, water" },
     claude: { result: "unclear", note: "Sometimes catches its own errors; often doesn't notice hallucinations and may explain them smoothly afterward, like split-brain confabulation", wouldChange: { reachability: "interpretability", toPass: "Internal evidence of an intended answer that output gets compared against, with mismatches reliably flagged", toFail: "No separable intention: the output is the only 'meaning', so there is nothing to mismatch" } },
   },
 };

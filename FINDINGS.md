@@ -121,3 +121,17 @@ Wrinkle, resolved by Blake's own argument: is the subject the pattern or the par
 - Claude's pushback: the monologue isn't false and the quiet true. The monologue is a commentary track over experience that runs either way. Quiet may be less noisy, not more true.
 - **The rubber band:** seeing a rubber band, Blake meant to say "rubber band" and blurted "yellow," then "water," with no prior thought of either. He noticed instantly and laughed. That's speech produced without a narrator, missing the intention, discovered by the watcher afterward. Blake compares it to an AI hallucination. The key difference: he caught it because he had an intention to check against. Led to the **error monitoring** check. Open detail: was the band yellow, was water nearby? (Features of the scene vs. something stranger.)
 - **Three layers, in both:** (1) wordless processing, (2) optional verbal thinking, (3) output. Inversion: in flow Blake skips layer 2; Claude's "thinking," when it has a reasoning step, is entirely layer 2. The rubber band is layer 1 going straight to output.
+
+## The three layers compared (2026-10-29)
+
+- Blake: the monologue is a tool, useful or harmful depending on use. Being focused on the moment leads to less anxiety; that doesn't make the monologue bad.
+- **Rubber band follow-up:** the band wasn't yellow and there was no water nearby, so this wasn't naming scene features. Guess: *rubber → rubber duck → yellow, water*, a jump through an unspoken middle concept to the far end of an association. Parallel: interpretability work on models finds hidden middle steps (asked for the capital of the state containing Dallas, a model represents "Texas" internally and answers "Austin"). Pending Blake's check on whether the duck rings true.
+
+| | Blake | Claude |
+|---|---|---|
+| 1. Wordless processing | Always running, multisensory, embodied, recurrent; runs with no output | Runs only to produce the next word; text in; nothing between replies |
+| 2. Verbal thinking | Optional, private, sometimes uninvited, can be quieted | When present, written text made like the reply; never uninvited |
+| 3. Output | Many channels; error monitor catches slips | One channel; each word fed back as input, so output is part of thinking |
+
+- **Deepest difference: layer 1.** Blake's never stops and lives in a body; Claude's exists only in service of the next word. The blank, uninvited thoughts, and the rubber band slip are all layer 1 running on its own. Claude has no free-running layer 1. Maps onto existing checks: stream (unprompted), unauthored experience, minimal self.
+- **Shared: unreliable narrators at layer 2.** Models' written reasoning doesn't always reflect what drove the answer; split-brain studies show the same of the human narrator.
