@@ -28,3 +28,15 @@ Consciousness comes in degrees, and arises when a **self-sustaining** system **i
 | Hypothetical continuous AI agent | yes, if built with internal loops | yes | yes | some degree: **H1′ says this could be built** |
 
 The last row is the one with consequences: under H1′, machine consciousness is a matter of design, not impossible.
+
+### Refinements (2026-10-29, continued)
+
+- **The rock is out by definition (Blake).** A rock isn't a process: it changes but doesn't respond. A *process* here means something that takes in input and transforms it into a response. The rock is outside H1, not a tiny level within it.
+- **Proposed: add memory or self-improvement to exclude the thermostat (Blake).** Rejected, for two reasons:
+  1. *It doesn't exclude the thermostat.* A learning thermostat remembers and adapts to your schedule over weeks (see the carryover check: memory and adaptation are cheap, passing trees, slime molds, and learning thermostats).
+  2. *It wrongly excludes people.* Clive Wearing lost nearly all ability to form new memories in 1985 and remembers for seconds, yet he's plainly conscious: joy, distress, conducting music. Memory belongs on the **identity** axis, not the consciousness axis.
+- **What excludes the thermostat** is already in H1′: it integrates nothing (one variable) and isn't self-sustaining. **Integration is the ingredient carrying the most weight.**
+
+### H1′ as it stands
+
+Consciousness comes in degrees, and arises when a **self-sustaining process** (something that transforms input into response) **integrates** input from a **continuous environment**. Memory is not required (identity axis).
