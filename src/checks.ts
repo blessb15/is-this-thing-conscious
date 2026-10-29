@@ -318,6 +318,30 @@ export const errorMonitoring: Check = {
   },
 };
 
+export const intrinsicActivity: Check = {
+  name: "Intrinsic activity",
+  origin: "blake",
+  axis: "consciousness",
+  tier: "supporting",
+  evidence: ["observable"],
+  status: "draft",
+  assumptions: [
+    "processing continues and generates content without input; input shapes it rather than drives it",
+    "not just input density: when input drops, a brain generates (closed-eye colors, dreams, sensory deprivation)",
+    "may mark living systems, but not only life: a continuously running AI with internal loops could pass",
+  ],
+  results: {
+    human: { result: "pass", note: "Mostly self-sustaining: responding to the world adds little to the brain's resting activity; dreamless sleep stops experience, not processing" },
+    octopus: { result: "pass", note: "Active sleep" },
+    honeybee: { result: "pass", note: "Sleeps; ongoing neural activity" },
+    tree: { result: "pass", note: "Endogenous rhythms (circadian). Suggests this check marks life, not mind" },
+    slimeMold: { result: "pass", note: "Endogenous oscillations" },
+    claude: { result: "fail", note: "Driven entirely by input: no input, no processing at any level. Whole-system Claude has constant input, but busy like a city, not a person: nothing integrates it", wouldChange: { reachability: "experiment", toPass: "A continuously running version with its own internal loops that generates without input", toFail: "Already fails as built" } },
+    thermostat: { result: "fail", note: "" },
+    rock: { result: "fail", note: "" },
+  },
+};
+
 export const wholeContextPresence: Check = {
   name: "Whole-context presence",
   origin: "claude",
@@ -423,6 +447,7 @@ export const checks: Check[] = [
   noticingIgnorance,
   carryover,
   errorMonitoring,
+  intrinsicActivity,
   narrativeSelf,
   minimalSelf,
   wholeContextPresence,
