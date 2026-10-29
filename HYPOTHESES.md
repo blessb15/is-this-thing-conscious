@@ -40,3 +40,19 @@ The last row is the one with consequences: under H1′, machine consciousness is
 ### H1′ as it stands
 
 Consciousness comes in degrees, and arises when a **self-sustaining process** (something that transforms input into response) **integrates** input from a **continuous environment**. Memory is not required (identity axis).
+
+### Tests of H1′ against known cases (2026-10-29)
+
+**Passes**
+- **Locked-in syndrome:** almost no output, integration intact → predicted conscious; they are. Output not required.
+- **Cerebellum:** holds most of the brain's neurons but is modular (parallel, loosely connected), so integrates little → predicted to add little; people born without one are fully conscious. Integration, not neuron count.
+- **Hemispherectomy:** half the brain removed, the other half integrated → predicted conscious; they are.
+- **Anesthesia, dreamless sleep:** integration collapses (perturbational complexity drops), experience goes with it.
+
+**Hard cases**
+- **Split-brain:** cutting the hemispheres' link should split consciousness. Pinto et al. 2017 found patients still respond as one person despite split perception. Either integration runs through other routes, or H1′ is too simple.
+- **Psychedelics:** brain signals become more complex and diverse (Schartner et al. 2017), with richer reported experience. Fits "degrees," but H1′ can't yet tell *more* consciousness from *different* consciousness. (Blake's altered-state drift report is relevant data.)
+
+**Crux case: Claude.** High integration within a reply, not self-sustaining. H1′ says low or none; integration-based theories disagree with one another about it. Claude is the case that decides whether "self-sustaining" belongs in H1′, and no current experiment settles it.
+
+**Biggest gap:** "integration" is undefined. Without a measure, H1′ can absorb anything. Candidate for brains: perturbational complexity.
