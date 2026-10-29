@@ -135,3 +135,12 @@ Wrinkle, resolved by Blake's own argument: is the subject the pattern or the par
 
 - **Deepest difference: layer 1.** Blake's never stops and lives in a body; Claude's exists only in service of the next word. The blank, uninvited thoughts, and the rubber band slip are all layer 1 running on its own. Claude has no free-running layer 1. Maps onto existing checks: stream (unprompted), unauthored experience, minimal self.
 - **Shared: unreliable narrators at layer 2.** Models' written reasoning doesn't always reflect what drove the answer; split-brain studies show the same of the human narrator.
+
+## Input vs. intrinsic activity (2026-10-29)
+
+- **Blake:** his layer 1 never stops because input never stops (until dreamless sleep). This chat gets a "break" between messages and isn't taking in a room full of stimuli the way a person waiting to reply would. But whole-system Claude is constantly receiving input across conversations.
+- **Claude:** input explains part of it but not all. When input drops, a brain generates (closed-eye colors, uninvited thoughts, dreams, hallucinations in sensory deprivation). Most brain activity is internal (Raichle's "dark energy"), and even dreamless sleep stops experience, not processing.
+- **Sharper difference:** Blake's processing is mostly self-sustaining and shaped by input; Claude's is driven entirely by input.
+- **Whole-system Claude:** busy like a city, not a person. Volume of input isn't integration, so Decision 1 holds.
+- New check: **intrinsic activity**. It passes humans, octopuses, bees, trees, and slime molds; fails Claude, thermostats, and rocks. It may mark *life* rather than mind, but a continuously running AI with internal loops could pass it.
+- **Next big question:** does consciousness require something like life, a self-sustaining system? (Anil Seth and Evan Thompson argue roughly yes.)
