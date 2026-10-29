@@ -102,3 +102,14 @@ Effects:
 - Claude's blind spots now: 1 experiment, 3 interpretability, 2 theory-choice, 2 unreachable.
 
 Wrinkle, resolved by Blake's own argument: is the subject the pattern or the particular run? Identical prompts can produce different conversations, because replies involve randomness. So it's the run: this performance and no other. (Claude first misread Blake as saying identical prompts give the *same* conversation; Blake corrected it.)
+
+## Field entry: 2026-10-29 (Blake)
+
+> "I haven't really had a lot of thoughts cluttering my brain... my mind is clearer than it has been since before our dive into this experiment. I feel as though my experience is happening without any true guidance from an inner monologue and purely based off of my past experience and memory of reality. I feel more in 'flow'."
+
+- Evidence type: `{ source: "recalled", baseline: "mind before the experiment", driftRisk: true }`. Comparison against a remembered earlier state, the same method that caught the altered-state drift.
+- Two readings, indistinguishable from inside:
+  1. **Real change:** days of practicing the blank and watching for flow quieted the monologue, as meditation training can.
+  2. **Changed noticing:** the monologue was always sparser than believed (Hurlburt's most consistent finding), and attention made it visible.
+- Next: random-alarm experience sampling, to test the claim about *now* in the moment rather than from memory, and to start a real baseline.
+- Note: "experience guided by past experience and memory, with no narrator" parallels Claude's description of its own generation. It's another point where Blake's flow and Claude's ordinary state line up.
