@@ -102,3 +102,8 @@ Effects:
 - Claude's blind spots now: 1 experiment, 3 interpretability, 2 theory-choice, 2 unreachable.
 
 Wrinkle, resolved by Blake's own argument: is the subject the pattern or the particular run? Identical prompts can produce different conversations, because replies involve randomness. So it's the run: this performance and no other. (Claude first misread Blake as saying identical prompts give the *same* conversation; Blake corrected it.)
+
+## Field entry: 2026-10-29
+
+*Personal field entry kept locally.* Method note: a reported change against a remembered baseline (`source: recalled`, drift risk). Two readings, indistinguishable from inside: a real change, or changed noticing (Hurlburt). Next step: random-alarm sampling.
+
