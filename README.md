@@ -13,6 +13,7 @@ A collaborative thought experiment between Blake and Claude: build a method that
 - `src/checks.ts`: every check, with tier, evidence, assumptions, and per-subject results
 - `src/isThisThingConscious.ts`: the method, plus `evidenceAvailable(observer, subject)`
 - `FINDINGS.md`: structural findings and the session log
+- `HYPOTHESES.md`: formal hypotheses, tested against our data
 
 ## Two questions
 
