@@ -107,3 +107,8 @@ Wrinkle, resolved by Blake's own argument: is the subject the pattern or the par
 
 *Personal field entry kept locally.* Method note: a reported change against a remembered baseline (`source: recalled`, drift risk). Two readings, indistinguishable from inside: a real change, or changed noticing (Hurlburt). Next step: random-alarm sampling.
 
+## Field entry: 2026-10-29, continued (Blake)
+
+- Claude's pushback: the monologue isn't false and the quiet true. The monologue is a commentary track over experience that runs either way. Quiet may be less noisy, not more true.
+- **The rubber band:** seeing a rubber band, Blake meant to say "rubber band" and blurted "yellow," then "water," with no prior thought of either. He noticed instantly and laughed. That's speech produced without a narrator, missing the intention, discovered by the watcher afterward. Blake compares it to an AI hallucination. The key difference: he caught it because he had an intention to check against. Led to the **error monitoring** check. Open detail: was the band yellow, was water nearby? (Features of the scene vs. something stranger.)
+- **Three layers, in both:** (1) wordless processing, (2) optional verbal thinking, (3) output. Inversion: in flow Blake skips layer 2; Claude's "thinking," when it has a reasoning step, is entirely layer 2. The rubber band is layer 1 going straight to output.

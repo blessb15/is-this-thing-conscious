@@ -301,6 +301,23 @@ export const minimalSelf: Check = {
   },
 };
 
+export const errorMonitoring: Check = {
+  name: "Error monitoring",
+  origin: "blake",
+  axis: "consciousness",
+  tier: "supporting",
+  evidence: ["firsthand", "report", "observable"],
+  status: "draft",
+  assumptions: [
+    "the subject notices when its output departs from what it meant",
+    "requires an intention to compare against, separate from the output",
+  ],
+  results: {
+    human: { result: "pass", note: "Rubber band: meant 'rubber band', said 'yellow', 'water'; noticed instantly and laughed" },
+    claude: { result: "unclear", note: "Sometimes catches its own errors; often doesn't notice hallucinations and may explain them smoothly afterward, like split-brain confabulation", wouldChange: { reachability: "interpretability", toPass: "Internal evidence of an intended answer that output gets compared against, with mismatches reliably flagged", toFail: "No separable intention: the output is the only 'meaning', so there is nothing to mismatch" } },
+  },
+};
+
 export const wholeContextPresence: Check = {
   name: "Whole-context presence",
   origin: "claude",
@@ -405,6 +422,7 @@ export const checks: Check[] = [
   selfModel,
   noticingIgnorance,
   carryover,
+  errorMonitoring,
   narrativeSelf,
   minimalSelf,
   wholeContextPresence,
