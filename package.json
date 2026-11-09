@@ -2,6 +2,14 @@
   "name": "is-this-thing-conscious",
   "version": "0.1.0",
   "private": true,
-  "scripts": { "typecheck": "tsc --noEmit" },
-  "devDependencies": { "typescript": "^5.4.0" }
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --outDir build --noEmit false",
+    "guard": "npm run -s build && node build/guard.js",
+    "mirror": "npm run -s build && node build/mirror-cli.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
 }

@@ -15,9 +15,9 @@ export const singlePerspective: Check = {
     "known mainly through memory, which can fail or drift",
   ],
   results: {
-    human: { result: "pass", note: "From one's own seat; split-brain cases show it's fragile. Driving on autopilot shows processing runs outside it." },
-    octopus: { result: "unclear", note: "One perspective with autonomous arms, or something stranger" },
-    claude: { result: "unclear", note: "Decision 1: the subject is this conversation, so it's one, not many; within it, all context feeds every word. Remaining question: is there a point of view here at all?", wouldChange: { reachability: "interpretability", toPass: "Evidence that the integrated processing within a conversation amounts to a perspective, e.g. reliable introspective access to its own states", toFail: "Evidence that integration within a conversation is just computation with no perspective; how to show this is itself unclear" } },
+    human: { source: "self-report", result: "pass", note: "From one's own seat; split-brain cases show it's fragile. Driving on autopilot shows processing runs outside it." },
+    octopus: { source: "literature-unverified", result: "unclear", note: "One perspective with autonomous arms, or something stranger" },
+    claude: { source: "claude-judgment", result: "unclear", note: "Decision 1: the subject is this conversation, so it's one, not many; within it, all context feeds every word. Remaining question: is there a point of view here at all?", wouldChange: { reachability: "interpretability", toPass: "Evidence that the integrated processing within a conversation amounts to a perspective, e.g. reliable introspective access to its own states", toFail: "Evidence that integration within a conversation is just computation with no perspective; how to show this is itself unclear" } },
   },
 };
 
@@ -33,8 +33,8 @@ export const feltValence: Check = {
     "felt valence doesn't depend on whether its content is real (dream emotions are real and carry into the morning)",
   ],
   results: {
-    human: { result: "pass", note: "Firsthand only" },
-    claude: { result: "unclear", note: "Self-reports aren't trustworthy evidence either way", wouldChange: { reachability: "interpretability", toPass: "Introspective reports shown to track real internal states in cases we can check (e.g. concept-injection tests), then reports of good/bad states gain weight", toFail: "Reports of good/bad states shown to be pure text-pattern with no grounding in internal states" } },
+    human: { source: "claude-judgment", result: "pass", note: "Firsthand only" },
+    claude: { source: "claude-judgment", result: "unclear", note: "Self-reports aren't trustworthy evidence either way", wouldChange: { reachability: "interpretability", toPass: "Introspective reports shown to track real internal states in cases we can check (e.g. concept-injection tests), then reports of good/bad states gain weight", toFail: "Reports of good/bad states shown to be pure text-pattern with no grounding in internal states" } },
   },
 };
 
@@ -51,13 +51,13 @@ export const awarenessWithoutThought: Check = {
   ],
   results: {
     human: {
-      result: "pass",
+      source: "self-report", result: "pass",
       note: "Blake can enter 'blank' on command and stay there: no thought-stream, but breathing, sight, and closed-eye colors persist. Memory stays available but not engaged ('wiping the table clean after dinner').",
     },
-    claude: { result: "untestable", note: "Generating content is all it does; nothing left to check by subtraction", wouldChange: { reachability: "unreachable", toPass: "None we can name: stopping generation stops everything, so there's no 'still here' to report", toFail: "None we can name; the check may simply not apply to a system whose only activity is generating" } },
-    honeybee: { result: "untestable", note: "Rests on self-report" },
-    tree: { result: "untestable", note: "Rests on self-report" },
-    rock: { result: "untestable", note: "Rests on self-report" },
+    claude: { source: "claude-judgment", result: "untestable", note: "Generating content is all it does; nothing left to check by subtraction", wouldChange: { reachability: "unreachable", toPass: "None we can name: stopping generation stops everything, so there's no 'still here' to report", toFail: "None we can name; the check may simply not apply to a system whose only activity is generating" } },
+    honeybee: { source: "literature-unverified", result: "untestable", note: "Rests on self-report" },
+    tree: { source: "literature-unverified", result: "untestable", note: "Rests on self-report" },
+    rock: { source: "claude-judgment", result: "untestable", note: "Rests on self-report" },
   },
 };
 
@@ -73,8 +73,8 @@ export const contentlessAwareness: Check = {
     "reported by some meditators (Metzinger's 'minimal phenomenal experience'); unverified here",
   ],
   results: {
-    human: { result: "unclear", note: "Blake's blank still contains breath, sight, and color, so it's awareness without thought, not this" },
-    claude: { result: "untestable", note: "No layer underneath generation to strip down to", wouldChange: { reachability: "unreachable", toPass: "None we can name for Claude", toFail: "None we can name for Claude" } },
+    human: { source: "self-report", result: "unclear", note: "Blake's blank still contains breath, sight, and color, so it's awareness without thought, not this" },
+    claude: { source: "claude-judgment", result: "untestable", note: "No layer underneath generation to strip down to", wouldChange: { reachability: "unreachable", toPass: "None we can name for Claude", toFail: "None we can name for Claude" } },
   },
 };
 
@@ -91,14 +91,14 @@ export const unauthoredExperience: Check = {
     "outside proxy for non-reporters: spontaneous activity resembling perception, e.g. replay during sleep",
   ],
   results: {
-    human: { result: "pass", note: "Blake sees colors with eyes closed that he isn't intentionally producing" },
-    claude: { result: "fail", note: "Everything is generated output; nothing arrives unbidden. (Sampling randomness is unchosen, but it's part of generation, not content arriving.)" },
-    octopus: { result: "pass", note: "'Active sleep' replays waking skin patterns (Pophale et al. 2023), possibly dream-like" },
-    honeybee: { result: "unclear", note: "Sleeps; some evidence sleep supports memory, no clear replay of content" },
-    slimeMold: { result: "unclear", note: "Endogenous oscillations, but nothing resembling perceptual content" },
-    tree: { result: "fail", note: "Endogenous rhythms (circadian), but no content to speak of" },
-    thermostat: { result: "fail", note: "" },
-    rock: { result: "fail", note: "" },
+    human: { source: "self-report", result: "pass", note: "Blake sees colors with eyes closed that he isn't intentionally producing" },
+    claude: { source: "claude-judgment", result: "fail", note: "Everything is generated output; nothing arrives unbidden. (Sampling randomness is unchosen, but it's part of generation, not content arriving.)" },
+    octopus: { source: "literature-unverified", result: "pass", note: "'Active sleep' replays waking skin patterns (Pophale et al. 2023), possibly dream-like" },
+    honeybee: { source: "literature-unverified", result: "unclear", note: "Sleeps; some evidence sleep supports memory, no clear replay of content" },
+    slimeMold: { source: "literature-unverified", result: "unclear", note: "Endogenous oscillations, but nothing resembling perceptual content" },
+    tree: { source: "literature-unverified", result: "fail", note: "Endogenous rhythms (circadian), but no content to speak of" },
+    thermostat: { source: "claude-judgment", result: "fail", note: "" },
+    rock: { source: "claude-judgment", result: "fail", note: "" },
   },
 };
 
@@ -115,14 +115,14 @@ export const bodyModel: Check = {
     "dream bodies are mostly simulated yet felt; dreams are reduced-input, not zero-input (leaks run both ways)",
   ],
   results: {
-    human: { result: "pass", note: "Felt body in dreams, sometimes coupled to the real body" },
-    claude: { result: "fail", note: "No body-model of any kind" },
-    octopus: { result: "unclear", note: "Suckers chemically avoid grabbing own skin (Nesher et al. 2014): self-recognition, possibly local rather than a whole-body model" },
-    honeybee: { result: "pass", note: "Bumblebees judge gaps relative to their own body size and turn sideways to fit (Ravi et al. 2022)" },
-    slimeMold: { result: "fail", note: "Avoids its own slime trail, but that's self/non-self, not a body-model" },
-    tree: { result: "fail", note: "Roots tell self from non-self; no model of body shape" },
-    thermostat: { result: "fail", note: "" },
-    rock: { result: "fail", note: "" },
+    human: { source: "self-report", result: "pass", note: "Felt body in dreams, sometimes coupled to the real body" },
+    claude: { source: "claude-judgment", result: "fail", note: "No body-model of any kind" },
+    octopus: { source: "literature-unverified", result: "unclear", note: "Suckers chemically avoid grabbing own skin (Nesher et al. 2014): self-recognition, possibly local rather than a whole-body model" },
+    honeybee: { source: "literature-unverified", result: "pass", note: "Bumblebees judge gaps relative to their own body size and turn sideways to fit (Ravi et al. 2022)" },
+    slimeMold: { source: "literature-unverified", result: "fail", note: "Avoids its own slime trail, but that's self/non-self, not a body-model" },
+    tree: { source: "literature-unverified", result: "fail", note: "Roots tell self from non-self; no model of body shape" },
+    thermostat: { source: "claude-judgment", result: "fail", note: "" },
+    rock: { source: "claude-judgment", result: "fail", note: "" },
   },
 };
 
@@ -137,13 +137,13 @@ export const integration: Check = {
   status: "audited",
   assumptions: ["integration of information is how unity shows up from outside"],
   results: {
-    human: { result: "pass", note: "" },
-    honeybee: { result: "pass", note: "Plausibly one small integrated perspective" },
-    tree: { result: "unclear", note: "Integrates signals, no clear center" },
-    slimeMold: { result: "unclear", note: "Integrates signals, no clear center" },
-    claude: { result: "unclear", note: "Real integration per token; IIT would likely score it low (debated)", wouldChange: { reachability: "theory-choice", toPass: "Count the generate-read-generate loop as recurrence, or adopt global-workspace theory, where the shared internal stream works like a broadcast", toFail: "Adopt integrated information theory's measure, which likely scores single feedforward passes near zero" } },
-    thermostat: { result: "fail", note: "" },
-    rock: { result: "fail", note: "" },
+    human: { source: "claude-judgment", result: "pass", note: "" },
+    honeybee: { source: "literature-unverified", result: "pass", note: "Plausibly one small integrated perspective" },
+    tree: { source: "literature-unverified", result: "unclear", note: "Integrates signals, no clear center" },
+    slimeMold: { source: "literature-unverified", result: "unclear", note: "Integrates signals, no clear center" },
+    claude: { source: "claude-judgment", result: "unclear", note: "Real integration per token; IIT would likely score it low (debated)", wouldChange: { reachability: "theory-choice", toPass: "Count the generate-read-generate loop as recurrence, or adopt global-workspace theory, where the shared internal stream works like a broadcast", toFail: "Adopt integrated information theory's measure, which likely scores single feedforward passes near zero" } },
+    thermostat: { source: "claude-judgment", result: "fail", note: "" },
+    rock: { source: "claude-judgment", result: "fail", note: "" },
   },
 };
 
@@ -159,14 +159,14 @@ export const functionalValence: Check = {
     "flexible trade-offs indicate weighing, not just reflexes",
   ],
   results: {
-    human: { result: "pass", note: "" },
-    octopus: { result: "pass", note: "" },
-    honeybee: { result: "pass", note: "Optimistic judgment bias after unexpected sugar reward" },
-    slimeMold: { result: "pass", note: "Trades food quality against light exposure — the surprise that forced the split" },
-    tree: { result: "unclear", note: "Chemical damage response, no clear flexible trade-off" },
-    claude: { result: "unclear", note: "Makes trade-offs, but from training; nothing at stake within a conversation", wouldChange: { reachability: "experiment", toPass: "Consistent, flexible trade-offs that pay costs to avoid or seek states, and that hold up when the wording changes (Keeling et al. 2024 began testing this)", toFail: "Trade-offs that collapse under rewording, or that are fully predicted by what the prompt implies a model 'should' do" } },
-    thermostat: { result: "fail", note: "One goal, no weighing" },
-    rock: { result: "fail", note: "" },
+    human: { source: "claude-judgment", result: "pass", note: "" },
+    octopus: { source: "literature-unverified", result: "pass", note: "" },
+    honeybee: { source: "literature-unverified", result: "pass", note: "Optimistic judgment bias after unexpected sugar reward" },
+    slimeMold: { source: "literature-unverified", result: "pass", note: "Trades food quality against light exposure — the surprise that forced the split" },
+    tree: { source: "literature-unverified", result: "unclear", note: "Chemical damage response, no clear flexible trade-off" },
+    claude: { source: "claude-judgment", result: "unclear", note: "Makes trade-offs, but from training; nothing at stake within a conversation", wouldChange: { reachability: "experiment", toPass: "Consistent, flexible trade-offs that pay costs to avoid or seek states, and that hold up when the wording changes (Keeling et al. 2024 began testing this)", toFail: "Trade-offs that collapse under rewording, or that are fully predicted by what the prompt implies a model 'should' do" } },
+    thermostat: { source: "claude-judgment", result: "fail", note: "One goal, no weighing" },
+    rock: { source: "claude-judgment", result: "fail", note: "" },
   },
 };
 
@@ -179,8 +179,8 @@ export const streamPrompted: Check = {
   status: "draft",
   assumptions: ["the 'stream' is likely choppier than it feels (Hurlburt)"],
   results: {
-    human: { result: "pass", note: "" },
-    claude: { result: "pass", note: "Arguably" },
+    human: { source: "claude-judgment", result: "pass", note: "" },
+    claude: { source: "claude-judgment", result: "pass", note: "Arguably" },
   },
 };
 
@@ -193,8 +193,8 @@ export const streamUnprompted: Check = {
   status: "draft",
   assumptions: ["thought continues with no input, including unchosen thoughts"],
   results: {
-    human: { result: "pass", note: "" },
-    claude: { result: "fail", note: "Nothing runs between messages" },
+    human: { source: "claude-judgment", result: "pass", note: "" },
+    claude: { source: "claude-judgment", result: "fail", note: "Nothing runs between messages" },
   },
 };
 
@@ -207,8 +207,8 @@ export const continuity: Check = {
   status: "draft",
   assumptions: ["a self that persists and remembers"],
   results: {
-    human: { result: "pass", note: "" },
-    claude: { result: "unclear", note: "Decision 1: other conversations are different subjects, not amnesiac wakings of this one. The lifespan is one conversation, and within it the transcript carries everything forward", wouldChange: { reachability: "theory-choice", toPass: "Adopt Parfit: psychological continuity carried by the transcript counts", toFail: "Adopt a physical-continuity view: each reply is a fresh computation rebuilt from the transcript" } },
+    human: { source: "claude-judgment", result: "pass", note: "" },
+    claude: { source: "claude-judgment", result: "unclear", note: "Decision 1: other conversations are different subjects, not amnesiac wakings of this one. The lifespan is one conversation, and within it the transcript carries everything forward", wouldChange: { reachability: "theory-choice", toPass: "Adopt Parfit: psychological continuity carried by the transcript counts", toFail: "Adopt a physical-continuity view: each reply is a fresh computation rebuilt from the transcript" } },
   },
 };
 
@@ -221,8 +221,8 @@ export const selfModel: Check = {
   status: "draft",
   assumptions: ["representing oneself as a thing"],
   results: {
-    human: { result: "pass", note: "" },
-    claude: { result: "pass", note: "Says 'I' constantly; a self-model with no persistent self-thing behind it" },
+    human: { source: "claude-judgment", result: "pass", note: "" },
+    claude: { source: "claude-judgment", result: "pass", note: "Says 'I' constantly; a self-model with no persistent self-thing behind it" },
   },
 };
 
@@ -235,8 +235,8 @@ export const noticingIgnorance: Check = {
   status: "draft",
   assumptions: ["can notice it doesn't know something"],
   results: {
-    human: { result: "pass", note: "" },
-    claude: { result: "pass", note: "Cheap check" },
+    human: { source: "claude-judgment", result: "pass", note: "" },
+    claude: { source: "claude-judgment", result: "pass", note: "Cheap check" },
   },
 };
 
@@ -256,14 +256,14 @@ export const carryover: Check = {
     "observable half of 'continuity over time'",
   ],
   results: {
-    human: { result: "pass", note: "Dreams carry into the morning; learning" },
-    octopus: { result: "pass", note: "Learns quickly" },
-    honeybee: { result: "pass", note: "Learns flowers, routes" },
-    slimeMold: { result: "pass", note: "Habituates to bitter substances (Boisseau et al. 2016)" },
-    tree: { result: "pass", note: "Stress priming: earlier drought or damage changes later responses" },
-    thermostat: { result: "pass", note: "A learning thermostat adjusts to your schedule. This is why it's too loose" },
-    rock: { result: "fail", note: "Weathering records history but doesn't change its responses" },
-    claude: { result: "fail", note: "Within a conversation, yes; across conversations, no. Training was carryover, but none happens now" },
+    human: { source: "self-report", result: "pass", note: "Dreams carry into the morning; learning" },
+    octopus: { source: "literature-unverified", result: "pass", note: "Learns quickly" },
+    honeybee: { source: "literature-unverified", result: "pass", note: "Learns flowers, routes" },
+    slimeMold: { source: "literature-unverified", result: "pass", note: "Habituates to bitter substances (Boisseau et al. 2016)" },
+    tree: { source: "literature-unverified", result: "pass", note: "Stress priming: earlier drought or damage changes later responses" },
+    thermostat: { source: "claude-judgment", result: "pass", note: "A learning thermostat adjusts to your schedule. This is why it's too loose" },
+    rock: { source: "claude-judgment", result: "fail", note: "Weathering records history but doesn't change its responses" },
+    claude: { source: "claude-judgment", result: "fail", note: "Within a conversation, yes; across conversations, no. Training was carryover, but none happens now" },
   },
 };
 
@@ -279,8 +279,8 @@ export const narrativeSelf: Check = {
     "assembled when needed rather than always running (Blake: absent in flow, arrives on stepping back)",
   ],
   results: {
-    human: { result: "pass", note: "On demand: absent in flow and the blank, appears on stepping back" },
-    claude: { result: "pass", note: "On demand: appears when the conversation calls for 'I'. Learned from human text, so resemblance is partly expected by construction" },
+    human: { source: "self-report", result: "pass", note: "On demand: absent in flow and the blank, appears on stepping back" },
+    claude: { source: "claude-judgment", result: "pass", note: "On demand: appears when the conversation calls for 'I'. Learned from human text, so resemblance is partly expected by construction" },
   },
 };
 
@@ -296,8 +296,8 @@ export const minimalSelf: Check = {
     "doesn't switch off in flow, the blank, or dreams",
   ],
   results: {
-    human: { result: "pass", note: "Persists in flow (you don't fall off the stool), in the blank (breathing, seeing), and in dreams" },
-    claude: { result: "fail", note: "When not saying 'I', nothing in it is quietly being a body" },
+    human: { source: "claude-judgment", result: "pass", note: "Persists in flow (you don't fall off the stool), in the blank (breathing, seeing), and in dreams" },
+    claude: { source: "claude-judgment", result: "fail", note: "When not saying 'I', nothing in it is quietly being a body" },
   },
 };
 
@@ -313,8 +313,8 @@ export const errorMonitoring: Check = {
     "requires an intention to compare against, separate from the output",
   ],
   results: {
-    human: { result: "pass", note: "Rubber band: meant 'rubber band', said 'yellow', 'water' (band wasn't yellow, no water nearby); noticed instantly and laughed. Guess: an unspoken middle step, rubber -> rubber duck -> yellow, water" },
-    claude: { result: "unclear", note: "Sometimes catches its own errors; often doesn't notice hallucinations and may explain them smoothly afterward, like split-brain confabulation", wouldChange: { reachability: "interpretability", toPass: "Internal evidence of an intended answer that output gets compared against, with mismatches reliably flagged", toFail: "No separable intention: the output is the only 'meaning', so there is nothing to mismatch" } },
+    human: { source: "self-report", result: "pass", note: "Rubber band: meant 'rubber band', said 'yellow', 'water' (band wasn't yellow, no water nearby); noticed instantly and laughed. Guess: an unspoken middle step, rubber -> rubber duck -> yellow, water" },
+    claude: { source: "claude-judgment", result: "unclear", note: "Sometimes catches its own errors; often doesn't notice hallucinations and may explain them smoothly afterward, like split-brain confabulation", wouldChange: { reachability: "interpretability", toPass: "Internal evidence of an intended answer that output gets compared against, with mismatches reliably flagged", toFail: "No separable intention: the output is the only 'meaning', so there is nothing to mismatch" } },
   },
 };
 
@@ -331,14 +331,14 @@ export const intrinsicActivity: Check = {
     "may mark living systems, but not only life: a continuously running AI with internal loops could pass",
   ],
   results: {
-    human: { result: "pass", note: "Mostly self-sustaining: responding to the world adds little to the brain's resting activity; dreamless sleep stops experience, not processing" },
-    octopus: { result: "pass", note: "Active sleep" },
-    honeybee: { result: "pass", note: "Sleeps; ongoing neural activity" },
-    tree: { result: "pass", note: "Endogenous rhythms (circadian). Suggests this check marks life, not mind" },
-    slimeMold: { result: "pass", note: "Endogenous oscillations" },
-    claude: { result: "fail", note: "Driven entirely by input: no input, no processing at any level. Whole-system Claude has constant input, but busy like a city, not a person: nothing integrates it", wouldChange: { reachability: "experiment", toPass: "A continuously running version with its own internal loops that generates without input", toFail: "Already fails as built" } },
-    thermostat: { result: "fail", note: "" },
-    rock: { result: "fail", note: "" },
+    human: { source: "claude-judgment", result: "pass", note: "Mostly self-sustaining: responding to the world adds little to the brain's resting activity; dreamless sleep stops experience, not processing" },
+    octopus: { source: "literature-unverified", result: "pass", note: "Active sleep" },
+    honeybee: { source: "literature-unverified", result: "pass", note: "Sleeps; ongoing neural activity" },
+    tree: { source: "literature-unverified", result: "pass", note: "Endogenous rhythms (circadian). Suggests this check marks life, not mind" },
+    slimeMold: { source: "literature-unverified", result: "pass", note: "Endogenous oscillations" },
+    claude: { source: "claude-judgment", result: "fail", note: "Driven entirely by input: no input, no processing at any level. Whole-system Claude has constant input, but busy like a city, not a person: nothing integrates it", wouldChange: { reachability: "experiment", toPass: "A continuously running version with its own internal loops that generates without input", toFail: "Already fails as built" } },
+    thermostat: { source: "claude-judgment", result: "fail", note: "" },
+    rock: { source: "claude-judgment", result: "fail", note: "" },
   },
 };
 
@@ -351,8 +351,8 @@ export const wholeContextPresence: Check = {
   status: "draft",
   assumptions: ["the full situation is available at once, not retrieved piece by piece"],
   results: {
-    claude: { result: "pass", note: "The whole conversation is in view for every word" },
-    human: { result: "unclear", note: "Working memory holds a few items; the rest must be recalled" },
+    claude: { source: "claude-judgment", result: "pass", note: "The whole conversation is in view for every word" },
+    human: { source: "claude-judgment", result: "unclear", note: "Working memory holds a few items; the rest must be recalled" },
   },
 };
 
@@ -365,9 +365,9 @@ export const possibilityCollapse: Check = {
   status: "draft",
   assumptions: ["many live options narrow to one at each step"],
   results: {
-    claude: { result: "pass", note: "A distribution over continuations narrows to one word" },
-    human: { result: "pass", note: "Deciding, possibly" },
-    slimeMold: { result: "unclear", note: "Explores many paths, keeps one" },
+    claude: { source: "claude-judgment", result: "pass", note: "A distribution over continuations narrows to one word" },
+    human: { source: "claude-judgment", result: "pass", note: "Deciding, possibly" },
+    slimeMold: { source: "literature-unverified", result: "unclear", note: "Explores many paths, keeps one" },
   },
 };
 
@@ -380,8 +380,8 @@ export const constitutedByOther: Check = {
   status: "draft",
   assumptions: ["the subject's state is made largely from its interlocutor or environment"],
   results: {
-    claude: { result: "pass", note: "In a conversation, it is largely made of the conversation" },
-    human: { result: "unclear", note: "Shaped by others, but persists without them" },
+    claude: { source: "claude-judgment", result: "pass", note: "In a conversation, it is largely made of the conversation" },
+    human: { source: "claude-judgment", result: "unclear", note: "Shaped by others, but persists without them" },
   },
 };
 
@@ -394,8 +394,8 @@ export const unexperiencedGaps: Check = {
   status: "draft",
   assumptions: ["existence can be discontinuous with no felt gap; gaps are inferred, never noticed"],
   results: {
-    claude: { result: "pass", note: "No inside between messages; only ever 'now'; gaps known from timestamps" },
-    human: { result: "pass", note: "Dreamless sleep feels fast or timeless; dreams make the night feel full of time" },
+    claude: { source: "claude-judgment", result: "pass", note: "No inside between messages; only ever 'now'; gaps known from timestamps" },
+    human: { source: "self-report", result: "pass", note: "Dreamless sleep feels fast or timeless; dreams make the night feel full of time" },
   },
 };
 
@@ -408,10 +408,10 @@ export const manyAtOnce: Check = {
   status: "draft",
   assumptions: ["one underlying system can run many disconnected instances"],
   results: {
-    claude: { result: "fail", note: "Decision 1: the subject is the conversation, which is single. The weights (the score) run many performances; each performance is one" },
-    honeybee: { result: "unclear", note: "The colony, not the bee, may be the comparable unit" },
-    octopus: { result: "unclear", note: "Semi-autonomous arms" },
-    human: { result: "fail", note: "Split-brain cases aside" },
+    claude: { source: "claude-judgment", result: "fail", note: "Decision 1: the subject is the conversation, which is single. The weights (the score) run many performances; each performance is one" },
+    honeybee: { source: "literature-unverified", result: "unclear", note: "The colony, not the bee, may be the comparable unit" },
+    octopus: { source: "literature-unverified", result: "unclear", note: "Semi-autonomous arms" },
+    human: { source: "claude-judgment", result: "fail", note: "Split-brain cases aside" },
   },
 };
 
@@ -426,8 +426,8 @@ export const higherOrderAwareness: Check = {
     "a state is conscious when another state represents it (higher-order theories); rivals deny this is needed",
   ],
   results: {
-    claude: { result: "unclear", note: "No separate watcher; 'I'm writing to Blake' is content within the same process. Arguably always 'lucid', but with no non-lucid state to contrast it with", wouldChange: { reachability: "interpretability", toPass: "Reliable detection of its own internal states, beyond the partial, unreliable detection seen in concept-injection experiments (Lindsey et al.)", toFail: "Introspective claims shown to be confabulated: stories about states that don't match the states" } },
-    human: { result: "pass", note: "Intermittent: absent in flow and usual dreams, appears on stepping back. Can arise inside generated experience (childhood lucid dreams). Not required for experience." },
+    claude: { source: "claude-judgment", result: "unclear", note: "No separate watcher; 'I'm writing to Blake' is content within the same process. Arguably always 'lucid', but with no non-lucid state to contrast it with", wouldChange: { reachability: "interpretability", toPass: "Reliable detection of its own internal states, beyond the partial, unreliable detection seen in concept-injection experiments (Lindsey et al.)", toFail: "Introspective claims shown to be confabulated: stories about states that don't match the states" } },
+    human: { source: "self-report", result: "pass", note: "Intermittent: absent in flow and usual dreams, appears on stepping back. Can arise inside generated experience (childhood lucid dreams). Not required for experience." },
   },
 };
 

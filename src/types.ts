@@ -49,7 +49,16 @@ export interface WouldChange {
   reachability: Reachability;
 }
 
+// Where a result came from. Guard: a judgment can't pose as a report or as research.
+export type Source =
+  | "self-report" // the experiencer said it about themselves (e.g. Blake about Blake)
+  | "sampled" // derived from experience samples via the mirror
+  | "claude-judgment" // Claude's call, including every result about Claude (conflict of interest)
+  | "literature-unverified" // a study recalled from memory, not yet checked
+  | "literature-verified"; // a study checked against its source
+
 export interface SubjectResult {
+  source: Source;
   result: Result;
   note: string;
   wouldChange?: WouldChange; // required in spirit for every "unclear" or "untestable"

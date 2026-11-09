@@ -135,3 +135,10 @@ Wrinkle, resolved by Blake's own argument: is the subject the pattern or the par
 - **Whole-system Claude:** busy like a city, not a person. Volume of input isn't integration, so Decision 1 holds.
 - New check: **intrinsic activity**. It passes humans, octopuses, bees, trees, and slime molds; fails Claude, thermostats, and rocks. It may mark *life* rather than mind, but a continuously running AI with internal loops could pass it.
 - **Next big question:** does consciousness require something like life, a self-sustaining system? (Anil Seth and Evan Thompson argue roughly yes.)
+
+## Session log: 2026-11-09
+
+- **Blind-spot review.** Claude is grading itself; Claude's framing primed Blake's reports; results are judgments, not measurements; n=1 human; the hard problem is set aside; the ethical stakes have been dropped. Recorded in GUARDS.md.
+- **Guards added**, five enforced by `npm run guard`, plus written rules. Every result now records a `source`. First run: 0 errors, 19 warnings, including two passes for Blake on firsthand-only checks (felt valence, minimal self) that rest on Claude's judgment rather than Blake's report, and 29 results resting on unverified studies.
+- **The method as a mirror (Blake's direction):** experience, however imperfectly reported, goes into the method, and the method reports back on that experience, for any experiencer. Built `src/sampling.ts`: 7 fixed questions with the free description first, altered and recalled samples kept apart, minimum 10 samples, output phrased as "you reported."
+- The mirror directly tests two claims Blake made: that the "I" drops out when absorbed (flow), and that unpleasantness goes with a wandering mind (anxiety).

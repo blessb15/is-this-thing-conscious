@@ -14,6 +14,19 @@ A collaborative thought experiment between Blake and Claude: build a method that
 - `src/isThisThingConscious.ts`: the method, plus `evidenceAvailable(observer, subject)`
 - `FINDINGS.md`: structural findings and the session log
 - `HYPOTHESES.md`: formal hypotheses, tested against our data
+- `GUARDS.md`: rules that keep the project honest, and its known blind spots
+- `src/sampling.ts`: experience sampling and the mirror
+- `src/guard.ts`: guards enforced as code
+- `data/samples/`: experience samples, one file per experiencer
+
+## Commands
+
+- `npm run guard`: check the project against its guards (fails on errors, lists warnings)
+- `npm run mirror -- <experiencer>`: report on an experiencer's own samples
+
+## The method as a mirror
+
+Any experiencer can sample their own moments (`data/samples/README.md`). Samples feed the method, and the mirror reports back what they show, linked to the checks. It's a tool for understanding your own experience, not a verdict about it. **"Human" in the results means Blake (n=1)** until others add samples.
 
 ## Two questions
 
