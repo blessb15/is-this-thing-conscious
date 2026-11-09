@@ -63,7 +63,7 @@ export function mirror(samples: Sample[], experiencer: string): Mirror {
   const count = (f: (s: Sample) => boolean, from: Sample[] = use) => from.filter(f).length;
 
   const warnings: string[] = [];
-  if (n < MIN_SAMPLES) warnings.push(`Only ${n} usable samples; patterns below are anecdotes until there are ${MIN_SAMPLES}+.`);
+  if (n < MIN_SAMPLES) warnings.push(`Only ${n} usable sample${n === 1 ? "" : "s"}; patterns below are anecdotes until there are ${MIN_SAMPLES}+.`);
   if (altered.length) warnings.push(`${altered.length} altered-state samples kept apart; compare them only against ordinary ones.`);
   if (recalled.length) warnings.push(`${recalled.length} samples recorded more than ${RECALL_LIMIT_MINUTES} min late, excluded as recalled.`);
   warnings.push("These are reports, not facts about your mind. Introspection is unreliable, and this project may have primed what you notice.");

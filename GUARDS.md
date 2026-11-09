@@ -13,6 +13,17 @@ Rules that keep the project from getting twisted as it grows. Some are enforced 
 | G5 | The sampling questions are fixed; changing them breaks the guard until it's logged here | Questions drifting toward the answers we want |
 | — | Unverified studies are counted and reported every run | Claude's memory of research being wrong |
 
+## Enforced by the app (Instant)
+
+| # | Rule | Protects against |
+|---|---|---|
+| A1 | Beeps are random within a window the user sets; the app never shows when they'll ring | Preparing a moment worth reporting |
+| A2 | 3-minute timebox from the beep. Miss it and the beep is dropped completely, not logged late | Reconstructed moments posing as in-the-moment ones |
+| A3 | The note is written first and locked before the six taps appear | Structured questions reshaping the free description |
+| A4 | Time to first keystroke is recorded automatically | Treating a slow, reconstructed answer like an instant one |
+| A5 | All data stays on the computer: no account, no server, no AI reading notes | Private experience leaving the experiencer's hands |
+| A6 | If several beeps are due at once (waking from sleep), only the latest is offered | Batch-answering a backlog |
+
 ## Written rules
 
 1. **No verdicts.** Nothing in the method returns "conscious: yes/no." It returns markers, splits, and unknowns.
@@ -35,3 +46,4 @@ Rules that keep the project from getting twisted as it grows. Some are enforced 
 ## Change log
 
 - 2026-11-09: guards created; sampling questions v1 (7 questions).
+- 2026-11-09: Instant app added; app guards A1–A6. App adds a state tap (ordinary/altered), already part of the `Sample` type.

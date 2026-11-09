@@ -6,10 +6,14 @@
     "typecheck": "tsc --noEmit",
     "build": "tsc --outDir build --noEmit false",
     "guard": "npm run -s build && node build/guard.js",
-    "mirror": "npm run -s build && node build/mirror-cli.js"
+    "mirror": "npm run -s build && node build/mirror-cli.js",
+    "app": "npm run -s build && electron .",
+    "test": "node app/scheduler.test.js && npm run -s guard"
   },
   "devDependencies": {
-    "typescript": "^5.4.0",
-    "@types/node": "^20.0.0"
-  }
+    "@types/node": "^20.0.0",
+    "electron": "^33.4.11",
+    "typescript": "^5.4.0"
+  },
+  "main": "app/main.js"
 }

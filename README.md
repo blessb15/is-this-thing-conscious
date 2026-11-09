@@ -22,11 +22,35 @@ A collaborative thought experiment between Blake and Claude: build a method that
 ## Commands
 
 - `npm run guard`: check the project against its guards (fails on errors, lists warnings)
+- `npm run app`: start **Instant**, the sampling app (see below)
 - `npm run mirror -- <experiencer>`: report on an experiencer's own samples
+- `npm test`: scheduler tests plus the guards
 
 ## The method as a mirror
 
 Any experiencer can sample their own moments (`data/samples/README.md`). Samples feed the method, and the mirror reports back what they show, linked to the checks. It's a tool for understanding your own experience, not a verdict about it. **"Human" in the results means Blake (n=1)** until others add samples.
+
+## Instant, the sampling app
+
+A desktop app (Electron) for experience sampling:
+
+1. Set a window (e.g. 9am–9pm) and how many beeps you want.
+2. Beeps ring at random times you can't see in advance.
+3. The app opens to a notepad: describe the instant before the beep, in your own words.
+4. The note locks, then six quick taps break it down (words, senses, unbidden, "I", feeling, absorbed, plus state).
+5. You have 3 minutes from the beep. Miss them and the beep is dropped.
+6. **Your mirror** shows what you reported, linked to the method's checks.
+
+Everything stays on your computer. Closing the window keeps beeps running; quit from the tray icon. **Export samples** writes a JSON file in the same format as `data/samples/`.
+
+```
+git clone https://github.com/blessb15/is-this-thing-conscious
+cd is-this-thing-conscious
+npm install
+npm run app
+```
+
+Needs Node.js 18+.
 
 ## Two questions
 
