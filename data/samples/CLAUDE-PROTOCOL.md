@@ -53,7 +53,9 @@ Then, after it answers:
 
 The two-message split locks the description before the questions appear (guard A3, which this Claude can't apply to itself).
 
-### Outside reader → compared with the matching Claude sample
+### Outside reader → experiencer `claude-outside`, compared with the matching Claude sample
+
+Logged as **transcript-based**, its own experiencer, never pooled with live reports (the outside reader's own suggestion, 2026-11-09).
 
 New incognito chat. Send:
 

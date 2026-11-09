@@ -166,3 +166,22 @@ Compared with Claude's first sample:
   - **Only difference from Claude's sample: the "I."** Claude's sample had self-referential content ("I've parked..."); the blind task was a list of trees, "nothing self-referential in play." In both, the "I" appeared only when the content called for it, the same on-demand pattern as Blake's flow reports. Two samples; the mirror can test it.
   - **Disagreement:** the blind Claude says its words come from processes it doesn't author or observe, so "almost nothing was put there by a choosing me." This contradicts Claude's earlier judgment that it fails *unauthored experience* (everything is generated). Two Claude judgments disagreeing → result changed from fail to **unclear**, as a theory choice.
   - **Question revision candidates** (not yet, guard G5): both Claudes found no "words" option fits; the blind Claude proposed "writing." It also separated *none* ("didn't find anything") from *neutral* ("checked and found flat"), a distinction the feeling question doesn't draw.
+
+## First outside-reader test (2026-11-09)
+
+A fresh incognito Claude, given only the excerpt before Claude's first BEEP, described "the assistant's instant" and answered the six questions. Logged as `claude-outside` (transcript-based, never pooled with live reports, as it suggested).
+
+| | Claude (self-report, full context) | Outside reader (excerpt only) |
+|---|---|---|
+| Description | about to make the protocol edit; parked controls + incognito caveat; noticed "I've parked" was claimed before done | about to deliver the protocol update; same two changes; noticed "I've parked" claims done but no edit appears; also listed unaddressed points |
+| Words | unsure | unsure |
+| Senses | none | none |
+| Unbidden | unsure | unsure |
+| Sense of "I" | **yes** | **unsure**: "that's grammar" |
+| Feeling | none | none (no option fits) |
+| Absorbed | yes | yes, behaviorally |
+
+- **The self-report added almost nothing beyond the transcript.** The outside reader recovered the same intention and found the same saying-before-doing flaw Claude had presented as an introspective discovery, with less context.
+- **The only difference, the "I," went against Claude:** both looked at "I've parked..." and Claude read it as a sense of self; the outside reader correctly called it grammar.
+- **The only unmatched claim** was salience ("the memory exchange was most vivid"), which neither side can check and may be confabulated.
+- **For this sample, Claude's "introspection" was a reading of its own transcript, done less carefully than an outsider's.** One sample, not a verdict, but it counts against Claude's reports tracking an inside: the hinge for felt valence and higher-order awareness. The comparison favored Claude on context (full conversation vs. excerpt), which makes the match more striking.
