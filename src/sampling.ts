@@ -55,7 +55,7 @@ const pct = (k: number, n: number) => (n === 0 ? "n/a" : `${k}/${n} (${Math.roun
 
 // The mirror: samples in, a report on your own experience out, linked to the method's checks.
 export function mirror(samples: Sample[], experiencer: string): Mirror {
-  const mine = samples.filter((s) => s.experiencer === experiencer);
+  const mine = samples.filter((s) => s.experiencer.toLowerCase() === experiencer.toLowerCase());
   const altered = mine.filter((s) => s.state === "altered");
   const recalled = mine.filter((s) => s.state === "ordinary" && s.minutesToRecord > RECALL_LIMIT_MINUTES);
   const use = mine.filter((s) => s.state === "ordinary" && s.minutesToRecord <= RECALL_LIMIT_MINUTES);

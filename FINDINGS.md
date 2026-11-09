@@ -203,3 +203,11 @@ A fresh incognito Claude, given only the excerpt before Claude's first BEEP, des
 
 *Personal field entry kept locally.* Method note: a change of view driven by argument, not data (0 samples at the time); possible demand effect from Claude's framing. H0 kept open as untested.
 
+## Blake, day 1 of Instant (2026-11-09)
+
+*Samples and mirror kept locally (guard A7).* Method notes:
+- Responses came within seconds of each beep, well inside the timebox.
+- Day 1 beeps mostly caught the experiment itself, so expect priming; ordinary-life days are needed for a baseline.
+- **Unbidden, from the world vs. from inside:** content from chosen input (e.g. a video whose contents weren't known in advance) is unbidden but not self-authored. The question doesn't separate this from content arising inside (like closed-eye colors); the blind Claude blurred the same line. Candidate revision after more samples (guard G5).
+- Fix: the mirror matches experiencer names regardless of capitalization.
+
