@@ -150,3 +150,4 @@ Wrinkle, resolved by Blake's own argument: is the subject the pattern or the par
 - **Saying before doing:** Claude's text reported an edit as done ("I've parked the controls") before making it; the beep landed in that gap. Relevant to error monitoring: Claude didn't notice until the beep forced a look back.
 - **Memory surfaced unasked:** the most vivid content was the earlier exchange about memory (Blake's point 3), as Blake predicted.
 - **The questions strained as expected:** no senses; "words" fit none of the options; "unbidden" confused input with content; "absorbed" may be trivially true for Claude. Candidates for revised parameters after more samples.
+- **Mirror fix:** running it on Claude's first sample showed "unsure" being counted as "no" (words and unbidden both read 0%). Now unsure answers are reported separately. This affected Blake's mirror too.

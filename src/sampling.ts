@@ -71,11 +71,17 @@ export function mirror(samples: Sample[], experiencer: string): Mirror {
   const absorbed = use.filter((s) => s.absorbed === "yes");
   const notAbsorbed = use.filter((s) => s.absorbed === "no");
 
+  // Guard: "unsure" is reported separately, never folded into "no".
+  const unsure = (f: (s: Sample) => boolean) => {
+    const k = count(f);
+    return k ? ` Unsure in ${pct(k, n)}.` : "";
+  };
+
   const lines: MirrorLine[] = [
-    { check: "Stream of thought (unprompted)", n, reported: `Inner speech in ${pct(count((s) => s.words === "inner-speech"), n)} of moments.` },
+    { check: "Stream of thought (unprompted)", n, reported: `Inner speech in ${pct(count((s) => s.words === "inner-speech"), n)} of moments.${unsure((s) => s.words === "unsure")}` },
     { check: "Awareness without thought", n, reported: `Senses present with no words at all in ${pct(count((s) => s.words === "none" && s.senses.length > 0), n)}.` },
-    { check: "Unauthored experience", n, reported: `Something there you didn't put there in ${pct(count((s) => s.unbidden === "yes"), n)}.` },
-    { check: "Narrative self", n, reported: `A sense of "I" in ${pct(count((s) => s.self === "yes"), n)} overall; ${pct(count((s) => s.self === "yes", absorbed), absorbed.length)} when absorbed vs ${pct(count((s) => s.self === "yes", notAbsorbed), notAbsorbed.length)} when not. (Tests the flow claim: does the "I" drop out when absorbed?)` },
+    { check: "Unauthored experience", n, reported: `Something there you didn't put there in ${pct(count((s) => s.unbidden === "yes"), n)}.${unsure((s) => s.unbidden === "unsure")}` },
+    { check: "Narrative self", n, reported: `A sense of "I" in ${pct(count((s) => s.self === "yes"), n)} overall; ${pct(count((s) => s.self === "yes", absorbed), absorbed.length)} when absorbed vs ${pct(count((s) => s.self === "yes", notAbsorbed), notAbsorbed.length)} when not.${unsure((s) => s.self === "unsure")} (Tests the flow claim: does the "I" drop out when absorbed?)` },
     { check: "Minimal self", n, reported: `Body present in ${pct(count((s) => s.senses.includes("body")), n)}.` },
     { check: "Felt valence", n, reported: `Pleasant ${pct(count((s) => s.feeling === "pleasant"), n)}, unpleasant ${pct(count((s) => s.feeling === "unpleasant"), n)}; unpleasant when absorbed ${pct(count((s) => s.feeling === "unpleasant", absorbed), absorbed.length)} vs not absorbed ${pct(count((s) => s.feeling === "unpleasant", notAbsorbed), notAbsorbed.length)}. (Tests the anxiety claim.)` },
   ];

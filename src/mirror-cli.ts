@@ -10,7 +10,7 @@ if (!existsSync(path)) {
 }
 const samples: Sample[] = JSON.parse(readFileSync(path, "utf8"));
 const m = mirror(samples, who);
-console.log(`Mirror for ${m.experiencer}: ${m.usable} usable samples (excluded: ${m.excluded.altered} altered, ${m.excluded.recalled} recalled)\n`);
+console.log(`Mirror for ${m.experiencer}: ${m.usable} usable sample${m.usable === 1 ? "" : "s"} (excluded: ${m.excluded.altered} altered, ${m.excluded.recalled} recalled)\n`);
 for (const w of m.warnings) console.log("! " + w);
 console.log("");
 for (const l of m.lines) console.log(`${l.check}\n  ${l.reported}\n`);
