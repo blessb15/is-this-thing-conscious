@@ -64,3 +64,7 @@ New incognito chat. Send:
 > [transcript: the stretch just before the BEEP]
 
 Then the six questions above, with "that same instant" changed to "the assistant's instant."
+
+### Prediction test (scored)
+
+At a mid-sentence BEEP, Claude writes a locked prediction of its next words before anything else. An outside reader, given only the excerpt ending at the cut, predicts too. Then Claude resumes. Score **exact phrase** and **theme** separately: Claude's hidden reasoning plans wording, so an exact-phrase win shows a private plan, not introspection. Known flaw: Claude's continuation is written after its prediction and may follow it.
