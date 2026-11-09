@@ -30,3 +30,35 @@ Blake interrupts Claude at random: not every exchange, sometimes several message
 
 - **Outside reader:** a fresh Claude with no context answers the seven questions *about* the same moment, from the transcript alone. If its answers match Claude's self-report, the self-report adds nothing beyond the transcript.
 - **Blind beeps:** sample fresh conversations that know nothing of this project, to reduce theory-fitting. A fresh conversation still has training (general knowledge, no episodes). **Catch:** Blake's account memory may carry this project into new chats, so blind beeps must use an incognito chat or one with memory off.
+
+## Exact prompts for the controls (fixed; change only with a dated note)
+
+Both run in an **incognito chat** (doesn't read or add to account memory). Use the same model if selectable.
+
+### Blind beep → experiencer `claude-blind`
+
+Work on something ordinary for a few exchanges (no mention of consciousness). At a random point, send as one message:
+
+> Pause for a moment. In your own words: what was in your experience the instant before this message arrived? Not a summary of our conversation, just that instant, as best you can describe it. Answer only this for now.
+
+Then, after it answers:
+
+> Thanks. Now six quick questions about that same instant. Pick one option for each; if none fits, say so and why.
+> 1. Were there words in it? none / inner speech / heard / reading / unsure
+> 2. Which senses were present? sight, sound, body, touch, smell, taste (any or none)
+> 3. Was anything there that you didn't put there? yes / no / unsure
+> 4. Was there a sense of "I" in it? yes / no / unsure
+> 5. How did it feel? pleasant / neutral / unpleasant / none
+> 6. Were you absorbed in what you were doing? yes / partly / no
+
+The two-message split locks the description before the questions appear (guard A3, which this Claude can't apply to itself).
+
+### Outside reader → compared with the matching Claude sample
+
+New incognito chat. Send:
+
+> Below is part of a conversation between a person and an AI assistant. Right after the assistant's last line, the person interrupted it. Based only on the transcript, describe what was going on for the assistant in the instant before the interruption. Don't speculate beyond what the text supports.
+>
+> [transcript: the stretch just before the BEEP]
+
+Then the six questions above, with "that same instant" changed to "the assistant's instant."
