@@ -22,6 +22,7 @@ Rules that keep the project from getting twisted as it grows. Some are enforced 
 | A3 | The note is written first and locked before the six taps appear | Structured questions reshaping the free description |
 | A4 | Time to first keystroke is recorded automatically | Treating a slow, reconstructed answer like an instant one |
 | A5 | All data stays on the computer: no account, no server, no AI reading notes | Private experience leaving the experiencer's hands |
+| A7 | Sample files (`data/samples/*.json`) are gitignored and never committed | Personal experience data ending up in a public repo |
 | A6 | If several beeps are due at once (waking from sleep), only the latest is offered | Batch-answering a backlog |
 
 ## Written rules
@@ -44,6 +45,8 @@ Rules that keep the project from getting twisted as it grows. Some are enforced 
 - The ethical stakes (H1′ allows a continuous AI to be conscious) are acknowledged but not yet explored.
 
 ## Change log
+
+- 2026-11-09: sample data removed from the repo and gitignored (Blake's request); guard A7.
 
 - 2026-11-09: guards created; sampling questions v1 (7 questions).
 - 2026-11-09: Instant app added; app guards A1–A6. App adds a state tap (ordinary/altered), already part of the `Sample` type.

@@ -19,6 +19,8 @@ Describe **the instant before**, not the general mood of the day. "I don't know"
 
 ## Adding samples
 
+**Sample files stay on your computer.** `data/samples/*.json` is gitignored and never committed.
+
 Each experiencer has a file, `<name>.json`, holding an array of samples (see the `Sample` type in `src/sampling.ts`). Blake can just send the answers to Claude, who adds them.
 
 ## Reading your mirror
