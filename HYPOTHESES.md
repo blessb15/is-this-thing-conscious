@@ -56,3 +56,14 @@ Consciousness comes in degrees, and arises when a **self-sustaining process** (s
 **Crux case: Claude.** High integration within a reply, not self-sustaining. H1′ says low or none; integration-based theories disagree with one another about it. Claude is the case that decides whether "self-sustaining" belongs in H1′, and no current experiment settles it.
 
 **Biggest gap:** "integration" is undefined. Without a measure, H1′ can absorb anything. Candidate for brains: perturbational complexity.
+
+## H2: memory, with the present as catalyst (Blake, 2026-11-09)
+
+> "My conscious experience spurs past memory in a way that forms these conscious thoughts or feelings... they may all come from a place that is inspired by memory and current lived experience. Maybe the lived experience or the 'now', even if we experience it differently, is like the catalyst for newness or creation inside a context, whether that's you responding to a message or me responding to a text at the mall."
+
+- **Fits both subjects:** Claude's memory = training + context, its now = the incoming message; Blake's memory = his memory bank, his now = senses and situation.
+- **Related:** predictive processing (Seth, Clark): the brain predicts from past experience; the senses correct the prediction; experience is mostly the brain's best guess.
+- **Implication for the record question:** Blake's "now" includes the senses, Claude's is text only. On H2's own terms, Blake's record holds sensory content Claude's lacks. (The outside-observer test can check whether that part is private.)
+- **Weakness:** as stated, nearly unfalsifiable. Past + present describes almost any system, thermostats included (setting = memory, room temperature = now).
+- **Test:** every sampled content should trace to memory, to the present, or both. Content from *neither* strains H2. Candidate parameter for the mirror (not yet added, guard G5): tag each sample's content source as present / memory / both / neither-or-unknown.
+- **First test case:** the rubber band slip ("yellow," "water"). Traceable only if the rubber-duck chain is real. Pending Blake.
