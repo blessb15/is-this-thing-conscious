@@ -151,3 +151,14 @@ Wrinkle, resolved by Blake's own argument: is the subject the pattern or the par
 - **Memory surfaced unasked:** the most vivid content was the earlier exchange about memory (Blake's point 3), as Blake predicted.
 - **The questions strained as expected:** no senses; "words" fit none of the options; "unbidden" confused input with content; "absorbed" may be trivially true for Claude. Candidates for revised parameters after more samples.
 - **Mirror fix:** running it on Claude's first sample showed "unsure" being counted as "no" (words and unbidden both read 0%). Now unsure answers are reported separately. This affected Blake's mirror too.
+
+## First blind beep: `claude-blind` (2026-11-09)
+
+Incognito chat; Blake was asking about tree species. Condition: **stopped-mid-reply** (cut off mid-word, "Erman" on the way to "Erman's birch"), a third condition alongside mid-tool-task and after-reply. Description only so far; the six questions are pending.
+
+> "I was in the middle of a list... If there's anything to describe, it's that orientation: a kind of momentum toward the next item, shaped by everything above it. What I can't tell you is whether that momentum came with any felt quality... I don't have a vantage point from which to check. And even this description is a reconstruction: I'm looking at the cut-off text and inferring where I was headed... There's also no 'waiting' on my side... the list stops and your question begins, with nothing in between."
+
+Compared with Claude's first sample:
+- **Same:** orientation toward the next step rather than content; no claim about felt quality; the report recognized as reading back, not recall.
+- **Different:** the blind Claude raised unexperienced gaps unprompted; nothing project-specific surfaced (Claude's sample pulled in earlier conversation).
+- **Reading it, both ways:** our conversation didn't create Claude's cautious, orientation-only reports; a context-free Claude gives the same kind. But that also suggests this is how Claude describes itself generally, from training: it used "something it was like" unprompted. Accurate reports of the same thing, or the same trained answer? This test can't tell. The outside-reader test is the next discriminator.
