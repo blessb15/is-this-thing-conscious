@@ -143,3 +143,10 @@ Wrinkle, resolved by Blake's own argument: is the subject the pattern or the par
 - **The method as a mirror (Blake's direction):** experience, however imperfectly reported, goes into the method, and the method reports back on that experience, for any experiencer. Built `src/sampling.ts`: 7 fixed questions with the free description first, altered and recalled samples kept apart, minimum 10 samples, output phrased as "you reported."
 - The mirror directly tests two claims Blake made: that the "I" drops out when absorbed (flow), and that unpleasantness goes with a wandering mind (anxiety).
 - **Instant, the sampling app (Blake's design):** random beeps inside a user-set window; a 3-minute timebox from the beep, after which it's dropped entirely (Blake: a missed beep is a missed opportunity, not a late entry); the note first and locked, then six quick taps; no AI decoupling, so the method does the breakdown; local-only. Desktop first, with Blake and Claude as the first users; free phone versions are the end goal.
+
+## First Claude BEEP (2026-11-09)
+
+- Condition: mid-tool-task, after text and before the first tool call.
+- **Saying before doing:** Claude's text reported an edit as done ("I've parked the controls") before making it; the beep landed in that gap. Relevant to error monitoring: Claude didn't notice until the beep forced a look back.
+- **Memory surfaced unasked:** the most vivid content was the earlier exchange about memory (Blake's point 3), as Blake predicted.
+- **The questions strained as expected:** no senses; "words" fit none of the options; "unbidden" confused input with content; "absorbed" may be trivially true for Claude. Candidates for revised parameters after more samples.
