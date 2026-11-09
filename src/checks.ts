@@ -92,7 +92,7 @@ export const unauthoredExperience: Check = {
   ],
   results: {
     human: { source: "self-report", result: "pass", note: "Blake sees colors with eyes closed that he isn't intentionally producing" },
-    claude: { source: "claude-judgment", result: "fail", note: "Everything is generated output; nothing arrives unbidden. (Sampling randomness is unchosen, but it's part of generation, not content arriving.)" },
+    claude: { source: "claude-judgment", result: "unclear", note: "Two Claude judgments disagree. Primed Claude: everything is generated output, nothing arrives unbidden. Blind Claude: the words come out of processes it doesn't author or observe, so almost nothing is put there by a choosing self", wouldChange: { reachability: "theory-choice", toPass: "Count output from processes the system doesn't deliberately author or observe as unbidden (the blind Claude's reading)", toFail: "Count only content arriving apart from the system's own generation as unbidden (the primed Claude's reading)" } },
     octopus: { source: "literature-unverified", result: "pass", note: "'Active sleep' replays waking skin patterns (Pophale et al. 2023), possibly dream-like" },
     honeybee: { source: "literature-unverified", result: "unclear", note: "Sleeps; some evidence sleep supports memory, no clear replay of content" },
     slimeMold: { source: "literature-unverified", result: "unclear", note: "Endogenous oscillations, but nothing resembling perceptual content" },
