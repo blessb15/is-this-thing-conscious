@@ -1,2 +1,5 @@
 node_modules/
 build/
+
+# Personal data: experience samples stay local, never in the repo
+data/samples/*.json
