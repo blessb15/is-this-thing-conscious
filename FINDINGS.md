@@ -198,3 +198,8 @@ A fresh incognito Claude, given only the excerpt before Claude's first BEEP, des
   - **Reading:** Claude's edge is its private plan (hidden reasoning), not introspection. It knew its planned words; the outsider knew the space of points. Consistent with the outside-reader result, now with a mechanism.
   - **Protocol change:** future prediction tests score *exact phrase* and *theme* separately, so a hidden plan can't pose as introspection.
 - **Proposed symmetric test for Blake:** at an Instant beep, someone who can see him (e.g. someone close to him) fills in the six taps from outside, without seeing his answers. Expected if his private access is real: a match on activity and absorption, a mismatch on senses and unbidden content.
+
+## Field entry: 2026-11-09
+
+*Personal field entry kept locally.* Method note: a change of view driven by argument, not data (0 samples at the time); possible demand effect from Claude's framing. H0 kept open as untested.
+

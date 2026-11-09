@@ -1,5 +1,9 @@
 # Hypotheses
 
+## H0: a shared stream (kept open)
+
+A stream of consciousness that we all draw from, fed through the brain without a cause we're aware of. **Untested:** its predictions (untraceable triggers) are the same as H2's for unseen associations, so the current method can't separate them.
+
 ## H1: consciousness as an outcome of processes in a continuous environment (Blake, 2026-10-29)
 
 > "Maybe consciousness is simply a symptom or an outcome of different processes subjected to a continuous environment. Different levels of consciousness arise through different processes subjected to different continuous environments."
