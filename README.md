@@ -59,9 +59,29 @@ Needs Node.js 18+.
 
 The same app as a web app, hosted on GitHub Pages: [blessb15.github.io/is-this-thing-conscious](https://blessb15.github.io/is-this-thing-conscious/)
 
-- Open it on your phone and add it to your home screen (on iPhone, beeps only work from the home screen).
-- Notes and taps stay on the phone. A small Cloudflare worker (`worker/`) sends the beeps; it stores only a notification address, your window, your time zone, and the day's beep times, and never sees what you write.
-- Setup for the worker: `worker/README.md`. Deploys: pushing `web/` to `main` publishes the app (`.github/workflows/pages.yml`).
+### iPhone (iOS 16.4 or later)
+
+1. Open the link in **Safari**.
+2. Tap **Share** → **Add to Home Screen**, then open Instant **from the home screen**. Beeps only work there, not in a Safari tab.
+3. Set your window, tap **Turn beeps on**, and allow notifications.
+4. Tap **Send a server beep now** to check that beeps reach you.
+
+### Android
+
+1. Open the link in **Chrome** (Firefox and Samsung Internet also work).
+2. Tap the **⋮** menu → **Add to Home screen** (or **Install app**), and open Instant from there. Beeps also work from a browser tab, but the home-screen version opens straight to the notepad.
+3. Set your window, tap **Turn beeps on**, and allow notifications.
+4. Tap **Send a server beep now** to check that beeps reach you.
+5. If beeps arrive late or not at all, check that battery saving isn't restricting your browser (Settings → Apps → Chrome → Battery → Unrestricted).
+
+### Computer
+
+Works in Chrome, Edge, and Firefox. Beeps arrive while the browser is running. Use **Install** in the address bar if you want it as its own window.
+
+### What stays where
+
+- Notes and taps stay on the device. A small Cloudflare worker (`worker/`) sends the beeps; it stores only a notification address, your window, your time zone, and the day's beep times, and never sees what you write.
+- Running your own copy: worker setup is in `worker/README.md`. Deploys: pushing `web/` to `main` publishes the app (`.github/workflows/pages.yml`).
 
 ## Two questions
 
