@@ -2,6 +2,8 @@
 
 A collaborative thought experiment between Blake and Claude: build a method that takes a `potentialConsciousness` and returns the list of checks it passes, from each of our perspectives.
 
+**Try Instant, the experience-sampling app:** [blessb15.github.io/is-this-thing-conscious](https://blessb15.github.io/is-this-thing-conscious/)
+
 **Ground rule:** no check can return `true` for consciousness itself. Every test inspects behavior or structure, and the hard problem is exactly the gap between those and experience. The method returns markers, not a verdict.
 
 **Second ground rule:** projecting experience onto things is as much an error as denying it. Human isn't the base case; assumptions get stated openly so they can be challenged.
@@ -55,7 +57,7 @@ Needs Node.js 18+.
 
 ## Instant on your phone
 
-The same app as a web app, hosted on GitHub Pages: `https://blessb15.github.io/is-this-thing-conscious/`
+The same app as a web app, hosted on GitHub Pages: [blessb15.github.io/is-this-thing-conscious](https://blessb15.github.io/is-this-thing-conscious/)
 
 - Open it on your phone and add it to your home screen (on iPhone, beeps only work from the home screen).
 - Notes and taps stay on the phone. A small Cloudflare worker (`worker/`) sends the beeps; it stores only a notification address, your window, your time zone, and the day's beep times, and never sees what you write.
