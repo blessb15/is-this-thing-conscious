@@ -1,0 +1,16 @@
+name = "instant-beeps"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+ALLOWED_ORIGIN = "https://blessb15.github.io"
+VAPID_SUBJECT = "https://github.com/blessb15/is-this-thing-conscious"
+VAPID_PUBLIC_KEY = "BPntQFw0eG0ypaWvOdEHocU3jEBM5_cc86AQgGmCWp4W8ul5DhTm-ctlQI4sDYyEAQO7Fwsje2hz_mscesz0hNo"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "instant-beeps"
+database_id = "a0921459-b7ce-4ed8-987b-77bb9a87059c"
