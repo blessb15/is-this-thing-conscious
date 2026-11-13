@@ -1,0 +1,1 @@
+{ "compilerOptions": { "strict": true, "target": "ES2020", "module": "ES2020", "moduleResolution": "bundler", "types": [], "outDir": "web/lib", "noEmit": false }, "files": ["src/sampling.ts"] }

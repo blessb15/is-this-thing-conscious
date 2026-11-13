@@ -211,3 +211,11 @@ A fresh incognito Claude, given only the excerpt before Claude's first BEEP, des
 - **Unbidden, from the world vs. from inside:** content from chosen input (e.g. a video whose contents weren't known in advance) is unbidden but not self-authored. The question doesn't separate this from content arising inside (like closed-eye colors); the blind Claude blurred the same line. Candidate revision after more samples (guard G5).
 - Fix: the mirror matches experiencer names regardless of capitalization.
 
+
+## Correction: Claude's hidden reasoning (2026-11-10)
+
+- Blake asked whether Claude's hidden reasoning is accessible, and whether it should be a sampling bucket.
+- Claude can see reasoning only within the current turn; earlier turns' reasoning doesn't appear to be kept. A beep ends the turn it interrupts, so that reasoning is gone by the time Claude answers.
+- **Correction to Claude's second BEEP sample:** it claimed its sense of direction came from "earlier private reasoning." More likely Claude rebuilt the plan in the beep turn from the half-finished reply, then reported the rebuild as access to a record: confabulation of the kind the outside-reader test warned about. The exact-phrase prediction win is better explained by the visible partial reply.
+- **Third BEEP (stopped-before-reply)** had no partial reply and no reasoning record; the report was openly pure reconstruction.
+- **Bucket rule (proposed):** label every claim in Claude's samples by source (*from transcript*, *from current reasoning*, *inferred*), and count reasoning-based claims only where Blake can check them against a visible reasoning summary. Reasoning is a record, not a window: written reasoning doesn't always reflect what drove the output.

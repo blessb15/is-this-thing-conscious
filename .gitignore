@@ -4,3 +4,4 @@ build/
 # Personal data: experience samples and private notes stay local, never in the repo
 data/samples/*.json
 private/
+web/lib/

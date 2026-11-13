@@ -1,0 +1,15 @@
+name = "instant-beeps"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+ALLOWED_ORIGIN = "https://blessb15.github.io"
+VAPID_SUBJECT = "https://github.com/blessb15/is-this-thing-conscious"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "instant-beeps"
+database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f1e7" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Instant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HOME -->
+  <main id="home" class="view">
+    <header>
+      <h1>Instant</h1>
+      <p class="sub">A beep, then the moment just before it.</p>
+    </header>
+
+    <div id="installNote" class="notice hidden"><strong>Add to Home Screen first.</strong> On iPhone, beeps only work once Instant is on your home screen: tap Share, then "Add to Home Screen," and open it from there.</div>
+    <div id="setupNote" class="notice hidden"><strong>Beeps aren't connected yet.</strong> Everything else works, including test beeps.</div>
+
+    <section class="card status">
+      <div><span id="beepState" class="big">–</span><span class="label">beeps</span></div>
+      <div><span id="total" class="big">–</span><span class="label">moments recorded</span></div>
+    </section>
+    <p class="hint">You won't see when the beeps are coming. Not even this phone knows.</p>
+
+    <section class="card">
+      <h2>Window</h2>
+      <div class="row">
+        <label>From <input type="time" id="start" /></label>
+        <label>To <input type="time" id="end" /></label>
+        <label>Beeps <input type="number" id="count" min="1" max="12" /></label>
+      </div>
+      <div class="row">
+        <label>Your name <input type="text" id="name" maxlength="40" /></label>
+      </div>
+      <div class="actions">
+        <button id="beepsOn">Turn beeps on</button>
+        <button id="beepsOff" class="secondary hidden">Turn beeps off</button>
+      </div>
+      <span id="saved" class="quiet"></span>
+    </section>
+
+    <div class="actions">
+      <button id="openMirror">Your mirror</button>
+      <button id="test" class="secondary">Try a test beep</button>
+      <button id="export" class="secondary">Export samples</button>
+    </div>
+
+    <details class="privacy">
+      <summary>What stays where</summary>
+      <p>Your notes and answers are saved only on this device. They never leave it unless you export them.</p>
+      <p>To send beeps, a small server keeps three things: where to send a notification, your time window, and today's random beep times. It never sees what you write.</p>
+      <p>Clearing this site's data in your browser deletes your samples, so export now and then.</p>
+    </details>
+  </main>
+
+  <!-- SAMPLE -->
+  <main id="sample" class="view hidden">
+    <div class="timer"><span id="countdown">3:00</span><span id="testTag" class="tag hidden">test, not saved</span></div>
+
+    <section id="step1">
+      <h2>What was in your experience the instant before the beep?</h2>
+      <p class="quiet">Your own words. Not the day, not your mood: the instant.</p>
+      <textarea id="describe" placeholder="…" autofocus></textarea>
+      <button id="next">Next</button>
+    </section>
+
+    <section id="step2" class="hidden">
+      <p class="locked" id="lockedNote"></p>
+
+      <div class="q" data-key="words" data-single>
+        <h3>Were there words in it?</h3>
+        <button data-v="none">none</button><button data-v="inner-speech">inner speech</button><button data-v="heard">heard</button><button data-v="reading">reading</button><button data-v="unsure">unsure</button>
+      </div>
+      <div class="q" data-key="senses" data-multi>
+        <h3>Which senses were present? <span class="quiet">(any or none)</span></h3>
+        <button data-v="sight">sight</button><button data-v="sound">sound</button><button data-v="body">body</button><button data-v="touch">touch</button><button data-v="smell">smell</button><button data-v="taste">taste</button>
+      </div>
+      <div class="q" data-key="unbidden" data-single>
+        <h3>Was anything there that you didn't put there?</h3>
+        <button data-v="yes">yes</button><button data-v="no">no</button><button data-v="unsure">unsure</button>
+      </div>
+      <div class="q" data-key="self" data-single>
+        <h3>Was there a sense of "I" in it?</h3>
+        <button data-v="yes">yes</button><button data-v="no">no</button><button data-v="unsure">unsure</button>
+      </div>
+      <div class="q" data-key="feeling" data-single>
+        <h3>How did it feel?</h3>
+        <button data-v="pleasant">pleasant</button><button data-v="neutral">neutral</button><button data-v="unpleasant">unpleasant</button><button data-v="none">none</button>
+      </div>
+      <div class="q" data-key="absorbed" data-single>
+        <h3>Were you absorbed in what you were doing?</h3>
+        <button data-v="yes">yes</button><button data-v="partly">partly</button><button data-v="no">no</button>
+      </div>
+      <div class="q" data-key="state" data-single>
+        <h3>State</h3>
+        <button data-v="ordinary">ordinary</button><button data-v="altered">altered</button>
+      </div>
+      <button id="submit" disabled>Save this moment</button>
+    </section>
+  </main>
+
+  <!-- DONE / DROPPED -->
+  <main id="done" class="view hidden">
+    <h2 id="doneTitle">Saved.</h2>
+    <p id="doneText" class="quiet"></p>
+    <button id="back">Back</button>
+  </main>
+
+  <!-- MIRROR -->
+  <main id="mirror" class="view hidden">
+    <header>
+      <h1>Your mirror</h1>
+      <p class="sub">What you reported. Not what you are.</p>
+    </header>
+    <ul id="warnings" class="warnings"></ul>
+    <div id="lines"></div>
+    <button id="mirrorBack" class="secondary">Back</button>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
