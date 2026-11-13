@@ -24,7 +24,8 @@ A collaborative thought experiment between Blake and Claude: build a method that
 - `npm run guard`: check the project against its guards (fails on errors, lists warnings)
 - `npm run app`: start **Instant**, the sampling app (see below)
 - `npm run mirror -- <experiencer>`: report on an experiencer's own samples
-- `npm test`: scheduler tests plus the guards
+- `npm test`: scheduler and worker tests plus the guards
+- `npm run web`: serve the phone app locally at http://localhost:8765
 
 ## The method as a mirror
 
@@ -51,6 +52,14 @@ npm run app
 ```
 
 Needs Node.js 18+.
+
+## Instant on your phone
+
+The same app as a web app, hosted on GitHub Pages: `https://blessb15.github.io/is-this-thing-conscious/`
+
+- Open it on your phone and add it to your home screen (on iPhone, beeps only work from the home screen).
+- Notes and taps stay on the phone. A small Cloudflare worker (`worker/`) sends the beeps; it stores only a notification address, your window, your time zone, and the day's beep times, and never sees what you write.
+- Setup for the worker: `worker/README.md`. Deploys: pushing `web/` to `main` publishes the app (`.github/workflows/pages.yml`).
 
 ## Two questions
 

@@ -8,7 +8,9 @@
     "guard": "npm run -s build && node build/guard.js",
     "mirror": "npm run -s build && node build/mirror-cli.js",
     "app": "npm run -s build && electron .",
-    "test": "node app/scheduler.test.js && npm run -s guard"
+    "test": "node app/scheduler.test.js && node worker/test.mjs && npm run -s guard",
+    "web:build": "tsc -p tsconfig.web.json",
+    "web": "npm run -s web:build && cd web && python3 -m http.server 8765"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
