@@ -15,7 +15,7 @@ export async function sendBeep(subscription, vapid) {
     ...(await vapidHeaders(subscription.endpoint, vapid)),
     TTL: "180", // if it can't arrive within the 3-minute timebox, the push service drops it
     Urgency: "high",
-    "Content-Length": "0",
   };
-  return fetch(subscription.endpoint, { method: "POST", headers });
+  // An explicit empty body makes the runtime send Content-Length: 0; some push services reject requests without it.
+  return fetch(subscription.endpoint, { method: "POST", headers, body: new Uint8Array(0) });
 }

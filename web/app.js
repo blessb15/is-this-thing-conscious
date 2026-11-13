@@ -34,6 +34,7 @@ function refresh() {
   $("total").textContent = samples().length;
   $("beepsOn").classList.toggle("hidden", s.beeps);
   $("beepsOff").classList.toggle("hidden", !s.beeps);
+  $("serverBeep").classList.toggle("hidden", !s.beeps);
   $("setupNote").classList.toggle("hidden", pushReady);
   $("installNote").classList.toggle("hidden", !(isIOS && !isStandalone));
   $("beepsOn").disabled = !pushReady;
@@ -43,7 +44,7 @@ const readForm = () => ({
   count: Math.max(1, Math.min(12, Number($("count").value) || 4)),
   name: $("name").value.trim() || "me",
 });
-const say = (t) => { $("saved").textContent = t; setTimeout(() => ($("saved").textContent = ""), 4000); };
+const say = (t) => { $("saved").textContent = t; clearTimeout(say.t); say.t = setTimeout(() => ($("saved").textContent = ""), 12000); };
 
 function urlB64ToBytes(b64) {
   const pad = "=".repeat((4 - (b64.length % 4)) % 4);
@@ -90,6 +91,22 @@ $("beepsOff").onclick = async () => {
 
 $("test").onclick = () => openForSample(Date.now(), true);
 
+// Diagnostic: a beep sent through the whole path right now. The beep it produces is treated as a test, not saved.
+$("serverBeep").onclick = async () => {
+  try {
+    const reg = registration || (await navigator.serviceWorker.ready);
+    const sub = await reg.pushManager.getSubscription();
+    if (!sub) return say("This device has no beep subscription. Turn beeps off and on again.");
+    store.set("testUntil", Date.now() + 2 * 60 * 1000);
+    const r = await fetch(WORKER_URL + "/test-beep", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ endpoint: sub.endpoint }) });
+    const d = await r.json();
+    if (d.ok) say(`Sent (push service answered ${d.status}). A beep should arrive in a few seconds.`);
+    else say(`Beep failed at ${d.step}${d.status ? " (" + d.status + ")" : ""}: ${d.detail || "no detail"}`);
+  } catch (e) {
+    say("Couldn't reach the beep server: " + e.message);
+  }
+};
+
 $("export").onclick = () => {
   const blob = new Blob([JSON.stringify(samples(), null, 2)], { type: "application/json" });
   const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(blob), download: `${settings().name}.json` });
@@ -101,6 +118,7 @@ let current = null;
 let timer = null;
 
 function openForSample(at, test = false) {
+  if (!test && at <= store.get("testUntil", 0)) test = true; // a server test beep, not a real sample
   const handled = store.get("handled", []);
   if (!test && handled.includes(at)) return show("home");
   if (!test) store.set("handled", [...handled.slice(-50), at]); // each beep opens once (guard A6)

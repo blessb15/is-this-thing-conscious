@@ -53,13 +53,20 @@ const sub = { endpoint: "https://web.push.apple.com/device1", keys: { p256dh: "x
 const res = await worker.fetch(new Request("https://w/subscribe", { method: "POST", body: JSON.stringify({ subscription: sub, start: "00:00", end: "23:59", count: 3, tz }) }), env);
 const body = await res.json();
 assert(body.ok && !("times" in body), "subscribe ok and never reveals times");
+// DB.first() for the test-beep route
+DB.prepare = ((orig) => (sql) => { const st = orig(sql); return { bind: (...a) => ({ ...st.bind(...a), first: async () => rows.get(a[0]) ?? null }) }; })(DB.prepare.bind(DB));
+const tb = await (await worker.fetch(new Request("https://w/test-beep", { method: "POST", body: JSON.stringify({ endpoint: sub.endpoint }) }), env)).json();
+assert(tb.ok && tb.status === 201, "test-beep sends now and reports status");
+pushes.length = 0;
+const tbMissing = await (await worker.fetch(new Request("https://w/test-beep", { method: "POST", body: JSON.stringify({ endpoint: "https://x/unknown" }) }), env)).json();
+assert(!tbMissing.ok && tbMissing.step === "server", "unknown device reported");
 const row = [...rows.values()][0];
 // Fake the clock: make the first beep due now
 const times = JSON.parse(row.times); times[0] = Date.now() - 1000; row.times = JSON.stringify(times); row.next_at = times[0];
 await worker.scheduled({}, env);
 assert.strictEqual(pushes.length, 1, "one beep sent");
 assert.strictEqual(pushes[0].init.headers.TTL, "180");
-assert.strictEqual(pushes[0].init.headers["Content-Length"], "0", "no payload");
+assert(pushes[0].init.body instanceof Uint8Array && pushes[0].init.body.length === 0, "empty body, no payload");
 assert.strictEqual(JSON.parse(row.times).length, 2, "beep consumed");
 // A stale beep (past the timebox) is dropped, not sent
 const t2 = JSON.parse(row.times); t2[0] = Date.now() - TIMEBOX_MS - 60000; row.times = JSON.stringify(t2); row.next_at = t2[0];

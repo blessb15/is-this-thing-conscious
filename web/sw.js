@@ -1,5 +1,5 @@
 // Service worker: shows beeps and opens the notepad. It never sees notes or taps.
-const CACHE = "instant-v1";
+const CACHE = "instant-v2";
 const FILES = ["./", "index.html", "style.css", "app.js", "config.js", "lib/sampling.js", "manifest.webmanifest", "icon-192.png"];
 
 self.addEventListener("install", (e) => {

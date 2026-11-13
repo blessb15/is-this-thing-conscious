@@ -40,6 +40,23 @@ export default {
       return json({ ok: true }, 200, cors); // never returns the times (guard A1)
     }
 
+    // Diagnostic: send one beep right now and report what the push service answered.
+    if (url.pathname === "/test-beep") {
+      if (!body.endpoint) return json({ error: "invalid" }, 400, cors);
+      const row = await env.DB.prepare("SELECT sub FROM subs WHERE id = ?1").bind(await idFor(body.endpoint)).first();
+      if (!row) return json({ ok: false, step: "server", detail: "This device isn't registered for beeps. Turn beeps off and on again." }, 200, cors);
+      try {
+        const vapid = { privateJwk: JSON.parse(env.VAPID_PRIVATE_JWK), publicKey: env.VAPID_PUBLIC_KEY, subject: env.VAPID_SUBJECT };
+        const r = await sendBeep(JSON.parse(row.sub), vapid);
+        const text = r.ok ? "" : (await r.text()).slice(0, 300);
+        console.log("test-beep", r.status, text);
+        return json({ ok: r.ok, step: "push-service", status: r.status, detail: text }, 200, cors);
+      } catch (e) {
+        console.log("test-beep error", String(e));
+        return json({ ok: false, step: "worker", detail: String(e).slice(0, 300) }, 200, cors);
+      }
+    }
+
     if (url.pathname === "/unsubscribe") {
       if (!body.endpoint) return json({ error: "invalid" }, 400, cors);
       await env.DB.prepare("DELETE FROM subs WHERE id = ?1").bind(await idFor(body.endpoint)).run();
@@ -60,7 +77,8 @@ export default {
       // Only the latest due beep rings, and only if still inside the timebox (guards A2, A6).
       const latest = due[due.length - 1];
       if (latest && now - latest <= TIMEBOX_MS) {
-        const r = await sendBeep(JSON.parse(row.sub), vapid).catch(() => null);
+        const r = await sendBeep(JSON.parse(row.sub), vapid).catch((e) => { console.log("beep error", String(e)); return null; });
+        if (r) console.log("beep", r.status, r.ok ? "" : (await r.clone().text()).slice(0, 200));
         if (r && (r.status === 404 || r.status === 410)) {
           await env.DB.prepare("DELETE FROM subs WHERE id = ?1").bind(row.id).run();
           continue;
